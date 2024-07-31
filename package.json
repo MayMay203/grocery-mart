@@ -1,0 +1,27 @@
+{
+  "name": "grocery-ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass scss:assets/css -w",
+    "minify": "sass scss:assets/css -s compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MayMay203/grocery-mart.git"
+  },
+  "keywords": [
+    "node",
+    "html",
+    "css",
+    "scss..."
+  ],
+  "author": "Nhung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MayMay203/grocery-mart/issues"
+  },
+  "homepage": "https://github.com/MayMay203/grocery-mart#readme"
+}
