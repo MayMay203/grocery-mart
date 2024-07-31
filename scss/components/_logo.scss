@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+.logo{
+        @include flexCenter('center');
+        column-gap: 14px;
+        
+            &__title{
+                font-size: 2.2rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 1.45455;
+            }
+    }
