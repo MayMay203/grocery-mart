@@ -1,12 +1,21 @@
-@use '../abstracts' as *;
+@use '../abstracts';
 
 .header{
     background-color: var(--header-bg-color);
 
     &__inner{
-        @include flexCenter('center');
+        @include abstracts.flexCenter('center');
         padding: 30px 0;
-  }
+
+         @include abstracts.breakpoint(lg){
+                padding: 20px 0;
+                justify-content: space-between;
+        }
+
+        @include abstracts.breakpoint(sm){
+                padding: 16px 0;
+        }
+    }
 }
 
 .navbar{
@@ -14,11 +23,11 @@
     margin-right: auto;
 
     &__list{
-        @include flexCenter('center');
+        @include abstracts.flexCenter('center');
     }
 
     &__link{
-        @include flexCenter('');
+        @include abstracts.flexCenter('');
         column-gap: 6px;
         font-size: 1.6rem;
         font-weight: 500;
@@ -29,19 +38,40 @@
     &__arrow{
         margin-top: 3px;
     }
+
+     // Responsive
+    @include abstracts.breakpoint(lg){
+        display: none;
+    }
+
+    @include abstracts.breakpoint(xl){
+        margin-left: 50px;
+    }
 }
 
 .top-act{
-        @include flexCenter('center');
+        @include abstracts.flexCenter('center');
         column-gap: 20px;
 
         &__group{
-            @include flexCenter('center');
+            @include abstracts.flexCenter('center');
             min-width: 50px;
             height: 50px;
             box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
             background-color: var(--top-act-group-bg-color);
-            border-radius: 8px;                
+            border-radius: 8px;   
+            
+            // Responsive
+            @include abstracts.breakpoint(md){
+                display: none;
+            }
+        }
+
+        &__group--single{
+            // Responsive
+            @include abstracts.breakpoint(lg){
+                display: none;
+            }   
         }
 
         &__group--single &__btn{
@@ -50,7 +80,7 @@
 
         &__btn{
             cursor: pointer;
-            @include flexCenter('center');
+            @include abstracts.flexCenter('center');
             column-gap: 10px;
             padding: 13px 20px;
             height: 100%;
@@ -76,6 +106,15 @@
             font-weight: 500;
             line-height: 1.47;
         }
+}
+
+.top-bar__more{
+    display: none;
+
+    // Responsive
+    @include abstracts.breakpoint(lg){
+        display: block;
     }
+}
 
 
