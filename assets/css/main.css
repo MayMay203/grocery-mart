@@ -90,6 +90,28 @@ button {
   filter: var(--icon-color);
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a8a4a4;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9f9a9a;
+}
+
 .row > *, .container-fluid, .container {
   padding-left: calc(var(--grid-gutter-x) * 0.5);
   padding-right: calc(var(--grid-gutter-x) * 0.5);
@@ -1337,11 +1359,12 @@ html {
 
 .top-menu {
   --main-column-width: 292px;
+  --max-inner-height: calc(min(582px, 100vh - 158px) - 2 * var(--inner-padding));
   position: relative;
 }
 .top-menu__main {
   width: var(--main-column-width);
-  height: calc(min(582px, 100vh - 158px) - 2 * var(--inner-padding));
+  height: var(--max-inner-height);
   border-right: 1px solid var(--top-menu-main-border-color);
   overflow-y: auto;
 }
@@ -1416,7 +1439,15 @@ html {
   position: absolute;
   inset: 0 0 0 var(--main-column-width);
   padding-left: var(--inner-padding);
+  height: var(--max-inner-height);
   overflow-y: auto;
+}
+.sub-menu--not-main {
+  position: initial;
+  inset: initial;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
