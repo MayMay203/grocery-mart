@@ -28,8 +28,8 @@
             @include abstracts.breakpoint(lg){
                 display: block;
             }
+        }
 }
-    }
 
 .navbar{
     margin-left: 129px;
@@ -52,11 +52,9 @@
         margin-top: 3px;
     }
 
-
     &-item{
         &:hover .dropdown{
-            visibility: visible;
-            opacity: 1;
+           display: block;
         }
     }
 
