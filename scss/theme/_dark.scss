@@ -8,7 +8,16 @@ html.dark{
     --top-act-group-bg-color: #292E39;
     --top-act-separate-bg-color: #EDEDF6;
     --top-act-group-shadow: rgba(0, 0, 0, 0.20);
+    
+    --dropdown-bg-color: #2f3441;
+    --dropdown-arrow-bg-color: brightness(0) saturate(100%) invert(17%) sepia(7%) saturate(1780%) hue-rotate(186deg) brightness(103%) contrast(91%);
+    --dropdown-shadow: rgba(23, 28, 40, 0.4); 
+    --top-menu-link-color: #B9BABE;
+
+    --top-menu-main-border-color: #171C28;
+    --menu-column-icon-color: brightness(0) saturate(100%) invert(93%) sepia(6%) saturate(1255%) hue-rotate(286deg) brightness(112%) contrast(97%);
+
       @include abstracts.breakpoint(lg){
-        --header-bg-color: #171C28;
+        --header-shadow: rgba(0, 0, 0, 0.20);
     }
 }

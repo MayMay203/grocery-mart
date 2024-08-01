@@ -9,7 +9,14 @@ html{
     --top-act-separate-bg-color: #EDEDF6;
     --top-act-group-shadow: rgba(237, 237, 246, 0.20); 
     
+    --dropdown-bg-color: #fff;
+    --dropdown-shadow: rgba(200, 200, 200, 0.40);
+
+    --top-menu-main-border-color: #D2D1D6;
+    
     @include abstracts.breakpoint(lg){
         --header-bg-color: #fff;
+        --header-shadow:rgba(237, 237, 246, 0.20);
+
     }
 }

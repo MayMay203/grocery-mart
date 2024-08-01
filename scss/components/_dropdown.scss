@@ -1,0 +1,102 @@
+.dropdown{
+    position: absolute;
+    left: 0;
+    padding-top: 54px;
+    width: min(1240px, 100%);
+    // visibility: hidden;
+    // opacity: 0;
+    // transition: .3s ease;
+    
+    &__inner{
+        --inner-height: min(582px, 100vh - 158px);
+        --inner-padding: 30px;
+
+        position: relative;
+        border-radius: 20px;
+        background-color: var(--dropdown-bg-color);
+        box-shadow: 0px 40px 90px 20px var(--dropdown-shadow);
+        padding: var(--inner-padding);
+        max-height: var(--inner-height);
+
+        &::before{
+            content: url('../icons/dropdown-arrow.svg');
+            position: absolute;
+            top: -13px;
+            left: var(--arrow-left-pos);
+            transform: translateX(-50%);
+            filter: var(--dropdown-arrow-bg-color);
+        }
+    }    
+}
+
+.top-menu{
+    max-height: calc(var(--inner-height) - 2 * var(--inner-padding));
+
+    &__main{
+        width: 292px;
+        max-height: inherit;
+        border-right: 1px solid var(--top-menu-main-border-color);
+        overflow-y: auto;
+    }
+}
+
+.menu-column{
+    display: flex;
+    column-gap: 14px;
+
+    &__icon{
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        position: relative;
+
+        &-1, &-2{
+            object-fit: cover;
+        }
+
+        &-1{
+            width: 30px;
+            height: 30px;
+        }
+
+        &-2{
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            filter: var(--menu-column-icon-color);
+        }
+    }
+
+    &__content{
+        flex: 1;
+    }
+
+    &__heading{
+        color: var(--top-menu-link-color);
+        margin-top: 4px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    &__list{
+        margin-top: 19px;
+    }
+
+    &__link{
+        color: var(--top-menu-link-color);
+        display: block;
+        padding: 7px 0;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.42875;
+
+        &:hover{
+            color: #0071DC;
+            font-weight: 500;
+        }
+    }
+}
