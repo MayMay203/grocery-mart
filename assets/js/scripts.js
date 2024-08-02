@@ -106,6 +106,7 @@ function handleActiveMenu() {
             if (!items.length) return;
 
             removeActive(menu);
+            if (window.innerWidth > 991)
             items[0].classList.add(activeClass);
 
             Array.from(items).forEach((item) => {
@@ -113,6 +114,12 @@ function handleActiveMenu() {
                     if (window.innerWidth <= 991) return;
                     removeActive(menu);
                     item.classList.add(activeClass);
+                };
+                 item.onclick = () => {
+                    if (window.innerWidth > 991) return;
+                    removeActive(menu);
+                     item.classList.add(activeClass);
+                     item.scrollIntoView();
                 };
             });
         });
@@ -124,3 +131,38 @@ function handleActiveMenu() {
         dropdown.onmouseleave = () => init();
     });
 }
+
+window.addEventListener('template-loaded', () => {
+// Responsive navbar in mobile, tablet
+    const menuBtn = $('.top-bar__more')
+    const overlayNavbar = $('.navbar__overlay');
+    const navbar = $('.navbar');
+    const backBtn = $('.navbar__close-btn')
+    menuBtn.addEventListener('click', () => {
+        navbar.style.cssText = 'transform: translateX(0); box-shadow: 0px 40px 90px 20px var(--sidebar-shadow)';
+        overlayNavbar.style.cssText = 'visibility: visible; opacity: 1;';
+    })
+
+    backBtn.addEventListener('click', () => {
+        navbar.style.transform = 'translateX(-100%)';
+        overlayNavbar.style.cssText = 'visibility: hidden; opacity: 0;';
+    })
+
+    overlayNavbar.addEventListener('click', () => {
+        navbar.style.transform = 'translateX(-100%)';
+        overlayNavbar.style.cssText = 'visibility: hidden; opacity: 0;';
+    })
+})
+
+window.addEventListener("template-loaded", () => {
+    const links = $$(".js-dropdown-list > li > a");
+    links.forEach((link) => {
+        link.onclick = () => {
+            if (window.innerWidth > 991) return;
+            const item = link.closest(".navbar-item");
+            item.classList.toggle("navbar-item--active");
+        };
+    });
+});
+
+

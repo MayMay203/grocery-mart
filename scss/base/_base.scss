@@ -25,9 +25,15 @@ a{
     text-decoration: none;
 }
 
-button, input, textarea, select{
+a,
+button,
+input,
+textarea,
+select,
+img{
     font-family: inherit;
     color: inherit;
+    -webkit-tap-highlight-color: transparent;
 }
 
 button{
@@ -40,6 +46,9 @@ button{
     filter: var(--icon-color);
 }
 
+.icon-dark{
+    filter: var(--icon-dark-color);
+}
 /* width */
 ::-webkit-scrollbar {
   width: 4px;

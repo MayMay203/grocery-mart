@@ -9,7 +9,7 @@
 
  .top-bar{
         @include abstracts.flexCenter('center');
-        padding: 30px 0;
+        padding: 20px 0;
         position: relative;
 
          @include abstracts.breakpoint(lg){
@@ -20,51 +20,127 @@
         @include abstracts.breakpoint(sm){
                 padding: 16px 0;
         }
-
-        &__more{
-            display: none;
-
-            // Responsive
-            @include abstracts.breakpoint(lg){
-                display: block;
-            }
-        }
 }
 
 .navbar{
     margin-left: 129px;
     margin-right: auto;
+    padding: 10px 0;
+    transition: transform .5s ease;
+
+    // Responsive
+    @include abstracts.breakpoint(xl){
+        margin-left: 50px;
+    }
+
+    @include abstracts.breakpoint(lg){
+        position: fixed;
+        inset: 0 50% 0 0;
+        background-color: var(--sidebar-bg-color);
+        margin-left: 0;
+        z-index: 10;
+        transform: translateX(-100%);
+        border-radius: 0px 20px 0px 0px;
+        color: var(--sidebar-text-color);
+    }
+
+     @include abstracts.breakpoint(sm){
+        inset: 0 20% 0 0;
+        padding: 0 0 10px;
+    }
 
     &__list{
         @include abstracts.flexCenter('center');
+
+        @include abstracts.breakpoint(lg){
+            overscroll-behavior: contain;
+            flex-direction: column;
+            align-items: flex-start;
+            height: calc(100% - 40px);
+            overflow-y: auto;
+        }
+
+        @include abstracts.breakpoint(md){
+            height: calc(100% - 123px);
+        }
+
+        
     }
 
     &__link{
         @include abstracts.flexCenter('');
         column-gap: 6px;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.5;
         padding: 13px 15px;
+
+        @include abstracts.breakpoint(lg){
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 40px;
+            font-size: 1.6rem;
+            line-height: 1.47;
+        }
+
+        @include abstracts.breakpoint(sm){
+            padding: 10px 20px;
+        }
     }
 
     &__arrow{
         margin-top: 3px;
+          @include abstracts.breakpoint(lg){
+            transition: rotate .25s ease;
+            rotate: -90deg;
+          }
     }
 
     &-item{
         &:hover .dropdown{
            display: block;
         }
+
+        @include abstracts.breakpoint(lg){
+           width: 100%;
+
+            &:hover .dropdown{
+                display: none;
+            }
+
+            &--active .dropdown{
+                display: block!important;
+            }
+
+            &--active .navbar__arrow{
+                rotate: 0deg;
+            }
+
+        }
     }
 
-     // Responsive
-    @include abstracts.breakpoint(lg){
-        display: none;
+    &__overlay{
+       visibility: hidden;
+       opacity: 0;
+       transition: .5s ease;
+       @include abstracts.breakpoint(lg){
+            position: fixed;
+            background-color: rgba(0,0,0,0.4);
+            inset: 0;
+            z-index: 8;
+       }
     }
 
-    @include abstracts.breakpoint(xl){
-        margin-left: 50px;
+    &__close-btn{
+        @include abstracts.breakpoint(xl){
+            padding: 10px 40px;
+        }
+
+        @include abstracts.breakpoint(sm){
+            padding: 10px 20px;
+        }
+
+
     }
 }
 
@@ -79,11 +155,6 @@
             box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
             background-color: var(--top-act-group-bg-color);
             border-radius: 8px;   
-            
-            // Responsive
-            @include abstracts.breakpoint(md){
-                display: none;
-            }
         }
 
         &__group--single{
@@ -125,6 +196,25 @@
             font-weight: 500;
             line-height: 1.47;
         }
+}
+
+.nav-btn{
+    padding: 10px 40px;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.47;
+
+    @include abstracts.breakpoint(sm){
+        padding: 10px 20px;
+    }
+
+    &__title{
+        margin-left: 16px;
+        margin-right: auto;
+    }
+
+
 }
 
 

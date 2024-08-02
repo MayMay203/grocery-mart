@@ -19,5 +19,9 @@ html.dark{
 
       @include abstracts.breakpoint(lg){
         --header-shadow: rgba(0, 0, 0, 0.20);
+        --sidebar-bg-color: #292E39;
+        --sidebar-text-color: #B9BABE;
+        --sidebar-shadow: rgba(23, 28, 40, 0.40);
+        --icon-dark-color: brightness(0) saturate(100%) invert(79%) sepia(7%) saturate(105%) hue-rotate(188deg) brightness(92%) contrast(95%);
     }
 }

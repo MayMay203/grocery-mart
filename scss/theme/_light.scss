@@ -17,6 +17,7 @@ html{
     @include abstracts.breakpoint(lg){
         --header-bg-color: #fff;
         --header-shadow:rgba(237, 237, 246, 0.20);
-
+        --sidebar-bg-color: #fff;
+        --sidebar-shadow: rgba(200, 200, 200, 0.40);
     }
 }
