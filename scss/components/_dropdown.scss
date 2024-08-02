@@ -6,7 +6,7 @@
     padding-top: 54px;
     width: min(1240px, 100%);
     display: none;
-    @include abstracts.breakpoint(lg){
+    @include abstracts.screen(lg){
         position: initial;
         padding-top: 0;
     }
@@ -30,7 +30,7 @@
             filter: var(--dropdown-arrow-bg-color);
         }
 
-        @include abstracts.breakpoint(lg){
+        @include abstracts.screen(lg){
             border-radius: 0;
             box-shadow: none;
             background-color: transparent;
@@ -42,7 +42,7 @@
             }
         }
 
-     @include abstracts.breakpoint(sm){
+     @include abstracts.screen(sm){
             padding: 0 20px;
         }
     }    
@@ -60,7 +60,7 @@
         overflow-y: auto;
 
         
-        @include abstracts.breakpoint(lg){
+        @include abstracts.screen(lg){
             width: 100%;
             height: auto;
             border-right: none;
@@ -72,7 +72,7 @@
     display: flex;
     column-gap: 14px;
 
-    @include abstracts.breakpoint(lg){
+    @include abstracts.screen(lg){
             margin-top: 10px;
     }
 
@@ -116,7 +116,7 @@
         font-weight: 600;
         line-height: 1.5;
 
-        @include abstracts.breakpoint(lg){
+        @include abstracts.screen(lg){
             margin-bottom: 26px;
         }
     }
@@ -124,7 +124,7 @@
     &__list{
         margin-top: 19px;
 
-        @include abstracts.breakpoint(lg){
+        @include abstracts.screen(lg){
             margin-top: 0;
         }
     }
@@ -172,7 +172,7 @@
         padding-left: 0;
     }
 
-    @include abstracts.breakpoint(lg){
+    @include abstracts.screen(lg){
         position: initial;
         grid-template-columns: 1fr;
         height: auto;

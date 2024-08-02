@@ -3,7 +3,7 @@
     padding: 40px 0;
     position: relative;
 
-     @include abstracts.breakpoint(md){
+     @include abstracts.screen(md){
             padding-top: 30px 0;
         }
 
@@ -19,7 +19,7 @@
         padding-top: 34%;
         flex-shrink: 0;
 
-        @include abstracts.breakpoint(md){
+        @include abstracts.screen(md){
             padding-top: 50%;
         }
     }
@@ -32,7 +32,7 @@
         top: 0;
         left: 0;
 
-        @include abstracts.breakpoint(md){
+        @include abstracts.screen(md){
             object-fit: cover;
         }
     }
@@ -63,7 +63,7 @@
             border-radius: 50%;
             top: 50%;
 
-            @include abstracts.breakpoint(md){
+            @include abstracts.screen(md){
                 border-width: 3px;
         }
         }
@@ -85,7 +85,7 @@
         font-weight: 500;
         line-height: 1.44;
 
-        @include abstracts.breakpoint(md){
+        @include abstracts.screen(md){
             font-size: 1.4rem;
             font-weight: 500;
             line-height: 1.42875;
