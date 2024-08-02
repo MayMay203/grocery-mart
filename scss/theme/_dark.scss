@@ -17,6 +17,11 @@ html.dark{
     --top-menu-main-border-color: #171C28;
     --menu-column-icon-color: brightness(0) saturate(100%) invert(93%) sepia(6%) saturate(1255%) hue-rotate(286deg) brightness(112%) contrast(97%);
 
+    --home-heading-color: #fff;
+
+    --cate-item-img-bg: #292E39;
+    --cate-item-bg: #171C28;
+
       @include abstracts.screen(lg){
         --header-shadow: rgba(0, 0, 0, 0.20);
         --sidebar-bg-color: #292E39;

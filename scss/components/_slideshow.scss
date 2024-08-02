@@ -1,11 +1,6 @@
 @use '../abstracts';
 .slideshow{
-    padding: 40px 0;
     position: relative;
-
-     @include abstracts.screen(md){
-            padding-top: 30px 0;
-        }
 
     &__inner{
         display: flex;

@@ -13,6 +13,12 @@ html{
     --dropdown-shadow: rgba(200, 200, 200, 0.40);
 
     --top-menu-main-border-color: #D2D1D6;
+
+    --home-heading-color: #1A162E;
+
+    --cate-item-img-bg: #fff;
+    --cate-item-bg: #EEE;
+
     
     @include abstracts.screen(lg){
         --header-bg-color: #fff;
