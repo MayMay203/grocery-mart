@@ -1,0 +1,94 @@
+@use '../abstracts';
+.slideshow{
+    padding: 40px 0;
+    position: relative;
+
+     @include abstracts.breakpoint(md){
+            padding-top: 30px 0;
+        }
+
+    &__inner{
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+
+    &-item{
+        position: relative;
+        width: 100%;
+        padding-top: 34%;
+        flex-shrink: 0;
+
+        @include abstracts.breakpoint(md){
+            padding-top: 50%;
+        }
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include abstracts.breakpoint(md){
+            object-fit: cover;
+        }
+    }
+
+    &__page{
+        display: flex;
+        width: 12.8%;
+        align-items: center;
+        column-gap: 20px;
+        position: absolute;
+        left: 5.22%;
+        bottom: 24%;
+    }
+
+    &__slider{
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        flex-shrink: 0;
+        position: relative;
+
+        &::before, &::after{
+            content: "";
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            top: 50%;
+
+            @include abstracts.breakpoint(md){
+                border-width: 3px;
+        }
+        }
+        
+        &::before{
+            left: 0;
+            transform: translate(-90%, -50%);
+        }
+
+        &::after{
+            right: 0;
+            transform: translate(90%, -50%);
+        }
+    }
+
+    &__number{
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.44;
+
+        @include abstracts.breakpoint(md){
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 1.42875;
+        }
+    }
+}
