@@ -21,6 +21,23 @@ html.dark{
 
     --cate-item-img-bg: #292E39;
     --cate-item-bg: #171C28;
+    --cate-item-bg-md: #171C28;
+
+    --filter-btn-bg: #171C28;
+    --filter-color: #fff;
+    --product-item-bg: #171C28;
+    --product-item-shadow: rgba(0, 0, 0, 0.20);
+    --like-btn-bg: #292E39;
+    --like-btn-shadow: rgba(124, 124, 124, 0.20);
+    --product-item-color: #fff;
+
+    --filter-bg: #292E39;
+    --filter-shadow: rgba(0, 0, 0, 0.40);
+    --arrow-up-bg: brightness(0) saturate(100%) invert(11%) sepia(6%) saturate(2957%) hue-rotate(184deg) brightness(93%) contrast(81%);
+    --filter-heading-color: #fff;
+    --circle-filter-bg: #292E39;
+    --filter-tag-bg: #171C28;
+    --select-text-color: #fff;
 
       @include abstracts.screen(lg){
         --header-shadow: rgba(0, 0, 0, 0.20);

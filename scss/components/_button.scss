@@ -1,0 +1,50 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 46px;
+    padding: 0 20px;
+    border-radius: 6px;
+    background: #f8f8fb;
+    font-size: 1.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    user-select: none;
+
+    .btn + .btn{
+        margin-left: 20px;
+    }
+
+    &--text{
+        color: #9E9DA8;
+        background-color: transparent;
+        font-weight: 400;
+    }
+
+    &--primary{
+        color: #1A162E;
+        background-color: #FFB700;
+        font-weight: 500;
+    }
+
+    &--outline{
+        background-color: transparent;
+        border: 1px solid #D2D1D6;
+    }
+
+    &--rounded{
+        border-radius: 99px;
+    }
+
+    &[disabled],
+    &--disabled{
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    &:hover{
+        opacity: 0.9;
+        cursor: pointer;
+    }
+}

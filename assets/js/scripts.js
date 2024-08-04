@@ -154,15 +154,45 @@ window.addEventListener('template-loaded', () => {
     })
 })
 
-window.addEventListener("template-loaded", () => {
-    const links = $$(".js-dropdown-list > li > a");
-    links.forEach((link) => {
-        link.onclick = () => {
-            if (window.innerWidth > 991) return;
-            const item = link.closest(".navbar-item");
-            item.classList.toggle("navbar-item--active");
-        };
+
+window.addEventListener('template-loaded', () => {
+    let liked = false;
+    const likeBtns = $$('.product-item__like-btn');
+    likeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            liked = !liked;
+            if (liked) {
+                btn.classList.add('liked');     
+            }
+            else {
+                btn.classList.remove('liked')
+            }
+        })
+    })
+})
+
+window.addEventListener('template-loaded', () => {
+    const filterBtn = $('.product__filter');
+    const filter = $('.filter');
+    let isHidden = filter.classList.contains('hide');
+    const filterCancel = $('.filter-cancel');
+    
+    filterBtn.addEventListener('click', (e) => {
+        // Ngăn chặn sự kiện click lan ra ngoài
+        isHidden = !isHidden;
+        filter.classList.toggle('hide', !isHidden);
+        filter.classList.toggle('hide', isHidden);
+    });
+
+    filterCancel.addEventListener('click', (e) => {
+        filter.classList.toggle('hide', true);
+    })
+
+    document.addEventListener('click', (e) => {
+        // Kiểm tra nếu click xảy ra ngoài filter và filterBtn
+        if (!filter.contains(e.target) && !filterBtn.contains(e.target)) {
+            filter.classList.add('hide');
+            isHidden = true;
+        }
     });
 });
-
-

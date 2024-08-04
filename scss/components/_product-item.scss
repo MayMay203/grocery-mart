@@ -1,0 +1,127 @@
+@use '../abstracts';
+
+.product-top{
+    @include abstracts.flexCenter(null, space-between);
+    margin-bottom: 20px;
+}
+
+.product__heading{
+    margin-bottom: 0;
+
+    @include abstracts.screen(md){
+        font-size: 2.2rem;
+    }
+}
+
+.product__filter{
+    @include abstracts.flexCenter(center);
+    border-radius: 6px;
+    column-gap: 14px;
+    background-color: var(--filter-btn-bg);
+    padding: 6px 12px;
+    color: var(--filter-color);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.4285;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.product-item{
+    background-color: var(--product-item-bg);
+    border-radius: 20px;
+    box-shadow: 0px 20px 60px 10px var(--product-item-shadow);
+    padding: 16px;
+    height: 100%;
+
+    &:hover &__thumb{
+        scale: 1.1;
+    }
+
+    &__img-wrap{
+        width: 100%;
+        padding-top: 100%;
+        position: relative;
+    }
+
+    &__thumb{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: scale .3s ease;
+    }
+
+    &__like-btn{
+        @include abstracts.flexCenter(center, center);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--like-btn-bg);
+        box-shadow: 0px 20px 60px var(--like-btn-shadow);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+    }
+
+    &__title{
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.5;
+        color: var(--product-item-color);
+    }
+
+    &__desc{
+        color:#9E9DA8;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.46667;
+        margin: 16px 0;
+    }
+
+    &__rating-wrap{
+        @include abstracts.flexCenter(null, space-between);
+    }
+
+    &__rating{
+        @include abstracts.flexCenter(center);
+        column-gap: 6px;
+
+        &-number{
+            color: var(--product-item-color);
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.5;
+
+        }
+    }
+
+    &__price{
+            color: var(--product-item-color);
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+}
+
+.liked-btn{
+    margin-top: 10px;
+    filter: brightness(0) saturate(100%) invert(50%) sepia(80%) saturate(4069%) hue-rotate(331deg) brightness(97%) contrast(105%);
+    display: none;
+}
+
+.liked .like-btn {
+    display: none;
+}
+
+.liked .liked-btn {
+    display: block;
+}
