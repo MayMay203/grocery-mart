@@ -1763,7 +1763,7 @@ html {
   }
 }
 .auth__intro-img {
-  max-width: 100%;
+  width: min(424px, 100%);
 }
 .auth__content {
   background-color: var(--auth-content-bg);
@@ -1828,6 +1828,9 @@ html {
     margin-top: 30px;
   }
 }
+.auth__form-forgot {
+  margin-top: 20px;
+}
 .auth__link {
   color: #0071DC;
   font-size: 1.5rem;
@@ -1849,6 +1852,9 @@ html {
 }
 .auth__text {
   color: var(--desc-auth-color);
+}
+.auth__message {
+  margin-top: 30px;
 }
 
 .form {
@@ -2772,6 +2778,19 @@ html {
 
 select option {
   color: #1A162E;
+}
+
+.message {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: left;
+}
+.message--success {
+  border: 1px solid #5bc45f;
+  background: rgba(39, 243, 117, 0.2);
 }
 
 /*# sourceMappingURL=main.css.map */

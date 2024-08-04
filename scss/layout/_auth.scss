@@ -36,7 +36,7 @@
         }
 
         &-img{
-            max-width: 100%;
+            width: min(424px, 100%);
         }
     }
 
@@ -102,6 +102,10 @@
          @include abstracts.screen(md){
                 margin-top: 30px;
         }
+
+        &-forgot{
+            margin-top: 20px;
+        }
     }
 
     &__link{
@@ -126,6 +130,10 @@
 
     &__text{
         color: var(--desc-auth-color);
+    }
+
+    &__message{
+        margin-top: 30px;
     }
 }
 
