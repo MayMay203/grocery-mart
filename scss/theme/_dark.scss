@@ -39,6 +39,11 @@ html.dark{
     --filter-tag-bg: #171C28;
     --select-text-color: #fff;
 
+    --footer-bg: #171C28;
+    --footer-heading-color: #fff;
+    --footer-text-color: #B9BABE;
+
+
       @include abstracts.screen(lg){
         --header-shadow: rgba(0, 0, 0, 0.20);
         --sidebar-bg-color: #292E39;

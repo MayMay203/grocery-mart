@@ -1,0 +1,144 @@
+@use '../abstracts';
+
+.footer{
+    margin-top: 60px;
+    background-color: var(--footer-bg);
+    padding: 60px 0;
+    font-size: 1.4rem;
+
+    &__row{
+        display: grid;
+        grid-template-columns: 2fr 1.2fr 1fr 1fr 1.5fr;
+        column-gap: 40px;
+
+        @include abstracts.screen(lg){
+            grid-template-columns: 1fr;
+            row-gap: 40px;
+        }
+    }
+
+    &__social-img{
+        width: 16px;
+        height: 16px;
+    }
+
+    &__heading{
+        color: var(--footer-heading-color);
+        font-weight: 600;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    &__link{
+        display: inline-block;
+        padding: 8px 0;
+        line-height: 1.4;
+    }
+
+    &__desc{
+        margin: 24px 0 36px;
+        @include abstracts.screen(lg){
+            width: 70%;
+        }
+    }
+
+    &__form{
+        display: flex;
+        column-gap: 12px;
+
+        &-input{
+        border: 2px solid #d2d1d6;
+        background-color: transparent;
+        padding: 6px 8px;
+        font-size: 1.6rem;
+        border-radius: 8px;
+    }
+
+        &-submit{
+            font-size: 1.5rem!important;
+            font-weight: 500!important;
+        }
+    }
+
+    &__label{
+        font-weight: 500;
+        margin-top: 12px;
+    }
+
+    &__text{
+        color: var(--footer-text-color);
+        line-height: 1.4;
+        padding: 8px 0;
+    }
+
+    &__bottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+
+        @include abstracts.screen(md){
+            flex-direction: column-reverse;
+            row-gap: 40px;
+        }
+    }
+
+    &__socials{
+        display: flex;
+        column-gap: 16px;
+    }
+
+    &__social{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        transition: .4s ease;
+
+        @include abstracts.screen(sm){
+            width: 42px;
+            height: 42px;
+        }
+
+
+        &-img{
+            width: 14px;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7482%) hue-rotate(72deg) brightness(99%) contrast(99%);
+           
+            @include abstracts.screen(sm){
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &--facebook{
+            background-color: #4863a9;
+        }
+
+        &--youtube{
+            background-color: #f00;
+        }
+
+        &--tiktok{
+            background-color: #000;
+        }
+
+        &--linkedin{
+            background-color: #2f71ab;
+        }
+
+        &--twitter{
+            background-color: #4999e6;
+        }
+
+        &:hover{
+            transform:translateY(-4px);
+        }
+    }
+}
+
+.copy-right{
+    font-size: 1.5rem;
+}
