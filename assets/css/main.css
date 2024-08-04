@@ -1361,6 +1361,11 @@ html {
     --sidebar-shadow: rgba(200, 200, 200, 0.40);
   }
 }
+@media (max-width: 767.98px) {
+  html {
+    --auth-intro-bg: #FFF;
+  }
+}
 
 .header {
   background-color: var(--header-bg-color);
@@ -1782,6 +1787,11 @@ html {
   align-items: center;
   padding: 50px 0;
 }
+@media (max-width: 767.98px) {
+  .auth__content-inner {
+    padding: 32px 0;
+  }
+}
 .auth__content .logo__title {
   color: var(--logo-color);
 }
@@ -1987,6 +1997,10 @@ html {
 }
 .dot--active {
   background-color: #B9BABE;
+}
+
+.auth__content-sign-in {
+  transform: translateX(0);
 }
 
 .home__container {

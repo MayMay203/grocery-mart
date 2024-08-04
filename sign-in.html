@@ -1,47 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <title>Sign in | Grocery Mart</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./assets/css/main.css">
+   <title>Sign in | Grocery Mart</title>
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./assets/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!--Fonts -->
-    <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
-    <!-- Scripts -->
-    <script src="./assets/js/scripts.js"></script>
+   <!-- Favicon -->
+   <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
+   <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png">
+   <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-icon-72x72.png">
+   <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-icon-76x76.png">
+   <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/apple-icon-114x114.png">
+   <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/apple-icon-120x120.png">
+   <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/apple-icon-144x144.png">
+   <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/apple-icon-152x152.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-icon-180x180.png">
+   <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-icon-192x192.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+   <link rel="manifest" href="./assets/favicon/manifest.json">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png">
+   <meta name="theme-color" content="#ffffff">
+   <!--Fonts -->
+   <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
+   <!-- Scripts -->
+   <script src="./assets/js/scripts.js"></script>
 </head>
 
 <body>
    <main class="auth">
-    <!-- Auth intro -->
-     <div class="auth__intro">
-        <img src="" alt="" class="auth__intro-img">
-        <p class="auth__intro-desc">The best of luxury brand values, high quality products, and innovative services</p>
-     </div>
-     <!-- Auth content -->
-      <div class="auth__content">
-        
+      <!-- Auth intro -->
+      <div class="auth__intro d-md-none">
+         <a href="./" class="logo d-none d-md-block">
+            <img src="./assets/icons/logo.svg" alt="logo" class="logo__img">
+            <h2 class="logo__title">grocerymart</h2>
+         </a>
+         <img src="./assets/img/auth-intro.png" alt="auth-intro" class="auth__intro-img">
+         <p class="auth__intro-text">The best of luxury brand values, high quality products, and innovative services</p>
+         <div class="dots d-none d-md-flex">
+            <div class="dot dot--active"></div>
+            <div class="dot"></div>
+            <div class="arrow-next">
+               <img src="./assets/icons/arrow-next.svg" alt="arrow-next" class="arrow-next-img">
+            </div>
+         </div>
+      </div>
+      <!-- Auth content -->
+      <div class="auth__content auth__content-sign-in">
+         <div class="auth__content-inner">
+            <a href="./" class="logo">
+               <img src="./assets/icons/logo.svg" alt="logo" class="logo__img">
+               <h2 class="logo__title">grocerymart</h2>
+            </a>
+            <h1 class="auth__heading">Hello Again!</h1>
+            <p class="auth__desc">Welcome back to sign in. As a returning customer, you have access to your previously saved all information.</p>
+            <form action="./sign-in.html" class="form auth__form">
+               <div class="form__group">
+                  <div class="form-text__input">
+                     <input type="email" placeholder="Email" class="form__input" required spellcheck="false">
+                     <img src="./assets/icons/email.svg" alt="email" class="form__input-icon">
+                     <img src="./assets/icons/warning.svg" alt="email" class="form__input-error">
+                  </div>
+                  <p class="form__error">Email is not in correct format</p>
+               </div>
+               <div class="form__group">
+                  <div class="form-text__input">
+                     <input type="password" placeholder="Password" class="form__input" minlength="6" required>
+                     <img src="./assets/icons/lock.svg" alt="lock" class="form__input-icon">
+                     <img src="./assets/icons/warning.svg" alt="email" class="form__input-error">
+                  </div>
+                  <p class="form__error">Password has at least 6 characters</p>
+               </div>
+               <div class="form__group form__group-inline">
+                  <label for="form-checkbox" class="checkbox-group">
+                     <input type="checkbox" name="" id="form-checkbox" class="form__checkbox" hidden>
+                     <span class="form__checkbox-label">Set as default card</span>
+                  </label>
+                  <a href="./forget-password.html" class="auth__link">Recovery Password</a>
+               </div>
+               <div class="form-group form__group-actions">
+                  <button class="btn btn--primary form__submit-btn">Sign In</button>
+                  <button class="btn btn--outline">
+                     <img src="./assets/icons/google.svg" alt="google" class="icon-light signin-google">
+                     Sign in with Google</button>
+               </div>
+               <div class="form__bottom">
+                  <p class="auth__text">Don’t have an account yet?</p>
+                  <a href="./sign-up.html" class="auth__link auth__link-sign-in">Sign Up</a>
+               </div>
+            </form>
+         </div>
       </div>
    </main>
+   <script>
+      window.dispatchEvent(new Event('template-loaded'));  
+   </script>
 </body>
+
 </html>

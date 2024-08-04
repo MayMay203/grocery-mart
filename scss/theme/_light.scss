@@ -47,4 +47,8 @@ html{
     --input-auth-text-color: #D2D1D6;
     --desc-auth-color: #9E9DA8;
     --dot-bg-color: #EDEDF6;
+
+    @include abstracts.screen(md){
+       --auth-intro-bg: #FFF;
+    }
 }

@@ -60,6 +60,10 @@
             flex-direction: column;
             align-items: center;
             padding: 50px 0;
+
+            @include abstracts.screen(md){
+                padding: 32px 0;
+            }
         }
 
         & .logo__title{
@@ -282,6 +286,10 @@
     &--active{
         background-color: #B9BABE;
     }
+}
+
+.auth__content-sign-in{
+    transform: translateX(0);
 }
 
 
