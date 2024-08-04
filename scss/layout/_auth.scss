@@ -2,7 +2,10 @@
 .auth{
     display: flex;
     min-height: 100vh;
-    overflow: hidden;
+
+    @supports (-webkit-touch-callout: none){
+        min-height: -webkit-fill-available;
+    }
 
     &__intro, &__content{
         flex: 1;
@@ -26,6 +29,10 @@
             font-weight: 500;
             line-height: 1.4444;
             color: var(--content-color);
+
+            @include abstracts.screen(md){
+                font-size: 1.5rem;
+            }
         }
 
         &-img{
@@ -61,11 +68,14 @@
     }
 
     &__heading{
-            // color: #1A162E;
             font-size: 3rem;
             font-weight: 500;
             line-height: 1.47;
             margin: 50px 0 10px;
+
+            @include abstracts.screen(md){
+                font-size: 2.2rem;
+            }
     }
 
     &__desc{
@@ -76,10 +86,18 @@
         line-height: 1.47;
         text-align: center;
         color: var(--desc-auth-color);
+
+         @include abstracts.screen(md){
+                font-size: 1.4rem;
+        }
     }
 
     &__form{
         margin-top: 60px;
+
+         @include abstracts.screen(md){
+                margin-top: 30px;
+        }
     }
 
     &__link{
@@ -87,6 +105,19 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.47;
+
+         @include abstracts.screen(md){
+                font-size: 1.4rem;
+        }
+
+        &-sign-in{
+            font-size: 1.8rem;
+            
+            @include abstracts.screen(md){
+                font-size: 1.6rem;
+            }
+        }
+
     }
 
     &__text{
@@ -95,7 +126,12 @@
 }
 
 .form{
+    &:has(:invalid) &__submit-btn{
+        opacity: 0.5;
+        pointer-events: none;
+    }
     width: 100%;
+
     &-text__input{
         @include abstracts.flexCenter('center', null);
         padding: 12px;
@@ -103,6 +139,10 @@
         border: 1px solid hsl(252, 6%, 83%);
         height: 50px;
         width: 100%;
+
+         @include abstracts.screen(md){
+               height: 48px;
+        }
     }
 
     &__input{
@@ -113,6 +153,10 @@
         line-height: 1.4444;
         padding-right: 4px;
         background-color: transparent;
+
+         @include abstracts.screen(md){
+                font-size: 1.6rem;
+        }
     }
 
      &__input::placeholder{
@@ -121,6 +165,12 @@
 
     &__input-icon{
         width: 24px;
+    }
+
+    &__input-error{
+        width: 24px;
+        display: none;
+        animation: shake .5s;
     }
 
     &__group{
@@ -132,8 +182,27 @@
         }
     }
 
+    &__group:has(:invalid):has(&__input:not(:placeholder-shown)){
+        .form__input-icon{
+            display: none;
+        }
+
+        .form__error,
+        .form__input-error{
+            display: block;
+        }
+
+        .form-text__input{
+            border-color: red;
+            background-color: rgba($color: red, $alpha: 0.1);
+        }
+    }
     &__group ~ &__group{
         margin-top: 30px;
+
+         @include abstracts.screen(md){
+                margin-top: 20px;
+        }
     }
 
     &__group-inline{
@@ -158,6 +227,10 @@
         color: var(--desc-auth-color);
         position: relative;
 
+         @include abstracts.screen(md){
+                font-size: 1.4rem;
+        }
+
         &::before{
             content: "";
             width: 20px;
@@ -175,6 +248,19 @@
         margin-top: 108px;
         @include abstracts.flexCenter('center', 'center');
         column-gap: 10px;
+
+         @include abstracts.screen(md){
+                margin-top: 58px;
+        }
+    }
+
+    &__error{
+        text-align: left;
+        margin-top: 10px;
+        color: red;
+        font-size: 1.4rem;
+        font-weight: 500;
+        display: none;
     }
 }
 
@@ -197,4 +283,5 @@
         background-color: #B9BABE;
     }
 }
+
 

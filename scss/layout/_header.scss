@@ -13,13 +13,31 @@
         position: relative;
         z-index: 1;
 
-         @include abstracts.screen(lg){
+        @include abstracts.screen(lg){
                 padding: 20px 0;
                 justify-content: space-between;
         }
 
         @include abstracts.screen(sm){
                 padding: 16px 0;
+        }
+
+        &__logo{
+            @include abstracts.screen(lg){
+                column-gap: 10px!important;
+            }
+
+            &-title{
+                @include abstracts.screen(lg){
+                font-size: 1.8rem!important;
+                }
+            }
+
+            &-img{
+                 @include abstracts.screen(lg){
+                width: 24px;
+            }
+            }
         }
 }
 
@@ -214,9 +232,8 @@
         margin-left: 16px;
         margin-right: auto;
     }
-
-
 }
+
 
 
 
