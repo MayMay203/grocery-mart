@@ -1,5 +1,6 @@
 @use '../abstracts';
 html.dark{
+  // Home page
     --text-color: #fff;
     --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7492%) hue-rotate(172deg) brightness(106%) contrast(102%);
 
@@ -43,7 +44,6 @@ html.dark{
     --footer-heading-color: #fff;
     --footer-text-color: #B9BABE;
 
-
       @include abstracts.screen(lg){
         --header-shadow: rgba(0, 0, 0, 0.20);
         --sidebar-bg-color: #292E39;
@@ -51,4 +51,12 @@ html.dark{
         --sidebar-shadow: rgba(23, 28, 40, 0.40);
         --icon-dark-color: brightness(0) saturate(100%) invert(79%) sepia(7%) saturate(105%) hue-rotate(188deg) brightness(92%) contrast(95%);
     }
+
+    // Sign up page
+    --auth-intro-bg: #171C28;
+    --auth-content-bg:#292E39;
+    --content-color: #B9BABE;
+    --logo-color: #fff;
+    --icon-light-color: brightness(0) saturate(100%) invert(82%) sepia(4%) saturate(176%) hue-rotate(191deg) brightness(91%) contrast(91%);
+    --dot-bg-color: #292E39;
 }

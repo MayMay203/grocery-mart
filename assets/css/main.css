@@ -102,6 +102,10 @@ button {
   filter: var(--icon-dark-color);
 }
 
+.icon-light {
+  filter: var(--icon-light-color);
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 4px;
@@ -1287,6 +1291,12 @@ html.dark {
   --footer-bg: #171C28;
   --footer-heading-color: #fff;
   --footer-text-color: #B9BABE;
+  --auth-intro-bg: #171C28;
+  --auth-content-bg:#292E39;
+  --content-color: #B9BABE;
+  --logo-color: #fff;
+  --icon-light-color: brightness(0) saturate(100%) invert(82%) sepia(4%) saturate(176%) hue-rotate(191deg) brightness(91%) contrast(91%);
+  --dot-bg-color: #292E39;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1324,6 +1334,10 @@ html {
   --circle-filter-bg: #fff;
   --filter-tag-bg: #F8F8FB;
   --footer-bg: #eee;
+  --auth-content-bg: #fff;
+  --input-auth-text-color: #D2D1D6;
+  --desc-auth-color: #9E9DA8;
+  --dot-bg-color: #EDEDF6;
 }
 @media (max-width: 991.98px) {
   html {
@@ -1673,6 +1687,187 @@ html {
 
 .copy-right {
   font-size: 1.5rem;
+}
+
+.auth {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.auth__intro, .auth__content {
+  flex: 1;
+  padding: 0 30px;
+}
+.auth__intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 50px;
+  background-color: var(--auth-intro-bg);
+}
+@media (max-width: 767.98px) {
+  .auth__intro {
+    padding: 80px 30px 50px;
+  }
+}
+.auth__intro-text {
+  width: 85%;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.4444;
+  color: var(--content-color);
+}
+.auth__intro-img {
+  max-width: 100%;
+}
+.auth__content {
+  background-color: var(--auth-content-bg);
+  color: var(--content-color);
+  transition: transform 0.5s ease;
+}
+@media (max-width: 767.98px) {
+  .auth__content {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    transform: translateX(100%);
+    overflow-y: auto;
+  }
+}
+.auth__content-inner {
+  width: min(460px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+.auth__content .logo__title {
+  color: var(--logo-color);
+}
+.auth__heading {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.47;
+  margin: 50px 0 10px;
+}
+.auth__desc {
+  padding: 0 16px;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.47;
+  text-align: center;
+  color: var(--desc-auth-color);
+}
+.auth__form {
+  margin-top: 60px;
+}
+.auth__link {
+  color: #0071DC;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.47;
+}
+.auth__text {
+  color: var(--desc-auth-color);
+}
+
+.form {
+  width: 100%;
+}
+.form-text__input {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid hsl(252, 6%, 83%);
+  height: 50px;
+  width: 100%;
+}
+.form__input {
+  flex: 1;
+  height: 26px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.4444;
+  padding-right: 4px;
+  background-color: transparent;
+}
+.form__input::placeholder {
+  color: var(--input-auth-text-color);
+}
+.form__input-icon {
+  width: 24px;
+}
+.form__group-actions {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.form__group ~ .form__group {
+  margin-top: 30px;
+}
+.form__group-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form__checkbox:checked ~ .form__checkbox-label::after {
+  content: "";
+  width: 12px;
+  height: 7px;
+  border-bottom: 2px solid #9E9DA8;
+  border-left: 2px solid #9E9DA8;
+  position: absolute;
+  top: 5px;
+  left: -24px;
+  rotate: -45deg;
+}
+.form__checkbox-label {
+  font-size: 1.5rem;
+  color: var(--desc-auth-color);
+  position: relative;
+}
+.form__checkbox-label::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 2px solid #9E9DA8;
+  position: absolute;
+  top: 0;
+  left: -28px;
+}
+.form__bottom {
+  margin-top: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+.checkbox-group {
+  padding-left: 28px;
+}
+
+.dots {
+  align-items: center;
+  column-gap: 13px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--dot-bg-color);
+}
+.dot--active {
+  background-color: #B9BABE;
 }
 
 .home__container {

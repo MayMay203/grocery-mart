@@ -1,5 +1,6 @@
 @use '../abstracts';
 html{
+    // Home page
     --text-color: #1A162E;
     --icon-color: brightness(0) saturate(100%) invert(8%) sepia(34%) saturate(1080%) hue-rotate(210deg) brightness(91%) contrast(97%);
 
@@ -34,12 +35,16 @@ html{
 
     --footer-bg: #eee;
 
-
-    
     @include abstracts.screen(lg){
         --header-bg-color: #fff;
         --header-shadow:rgba(237, 237, 246, 0.20);
         --sidebar-bg-color: #fff;
         --sidebar-shadow: rgba(200, 200, 200, 0.40);
     }
+
+    // Sign up page
+    --auth-content-bg: #fff;
+    --input-auth-text-color: #D2D1D6;
+    --desc-auth-color: #9E9DA8;
+    --dot-bg-color: #EDEDF6;
 }

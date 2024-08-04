@@ -52,6 +52,10 @@ button{
 .icon-dark{
     filter: var(--icon-dark-color);
 }
+
+.icon-light{
+    filter: var(--icon-light-color);
+}
 /* width */
 ::-webkit-scrollbar {
   width: 4px;

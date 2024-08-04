@@ -138,20 +138,26 @@ window.addEventListener('template-loaded', () => {
     const overlayNavbar = $('.navbar__overlay');
     const navbar = $('.navbar');
     const backBtn = $('.navbar__close-btn')
-    menuBtn.addEventListener('click', () => {
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
         navbar.style.cssText = 'transform: translateX(0); box-shadow: 0px 40px 90px 20px var(--sidebar-shadow)';
         overlayNavbar.style.cssText = 'visibility: visible; opacity: 1;';
     })
+    }
 
-    backBtn.addEventListener('click', () => {
+    if (backBtn) {
+        backBtn.addEventListener('click', () => {
         navbar.style.transform = 'translateX(-100%)';
         overlayNavbar.style.cssText = 'visibility: hidden; opacity: 0;';
     })
+    }
 
-    overlayNavbar.addEventListener('click', () => {
+    if (overlayNavbar) {
+        overlayNavbar.addEventListener('click', () => {
         navbar.style.transform = 'translateX(-100%)';
         overlayNavbar.style.cssText = 'visibility: hidden; opacity: 0;';
     })
+   }
 })
 
 
@@ -174,25 +180,46 @@ window.addEventListener('template-loaded', () => {
 window.addEventListener('template-loaded', () => {
     const filterBtn = $('.product__filter');
     const filter = $('.filter');
-    let isHidden = filter.classList.contains('hide');
+    let isHidden = filter?filter.classList.contains('hide'):'';
     const filterCancel = $('.filter-cancel');
     
-    filterBtn.addEventListener('click', (e) => {
+    if (filterBtn) {
+        filterBtn.addEventListener('click', (e) => {
         // Ngăn chặn sự kiện click lan ra ngoài
         isHidden = !isHidden;
         filter.classList.toggle('hide', !isHidden);
         filter.classList.toggle('hide', isHidden);
     });
+   }
 
-    filterCancel.addEventListener('click', (e) => {
+    if (filterCancel) {
+        filterCancel.addEventListener('click', (e) => {
         filter.classList.toggle('hide', true);
     })
+    }
 
-    document.addEventListener('click', (e) => {
+    if (filter) {
+        document.addEventListener('click', (e) => {
         // Kiểm tra nếu click xảy ra ngoài filter và filterBtn
         if (!filter.contains(e.target) && !filterBtn.contains(e.target)) {
             filter.classList.add('hide');
             isHidden = true;
         }
     });
+    }
 });
+
+window.addEventListener('template-loaded', () => {
+    const dotElement = $$('.dot')[1];
+    const next = $('.arrow-next');
+    const contentPart = $('.auth__content')
+    dotElement.addEventListener('click', (e) => {
+        contentPart.style.transform = 'translateX(0)';
+        console.log(contentPart)
+    })
+
+    next.addEventListener('click', (e) => {
+        contentPart.style.transform = 'translateX(0)';
+        console.log(contentPart)
+    })
+})

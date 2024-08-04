@@ -32,14 +32,74 @@
 </head>
 
 <body>
-   <div class="container">
-        <header id="header"></header>
-        <h1>Sign up Page</h1>
-        <footer id="footer"></footer>
-   </div>
+   <main class="auth">
+        <!-- Auth intro -->
+        <div class="auth__intro">
+            <a href="./" class="logo">
+                <img src="./assets/icons/logo.svg" alt="logo" class="logo__img">
+                <h1 class="logo__title">grocerymart</h1>
+            </a>
+            <img src="./assets/img/auth-intro.png" alt="auth-intro" class="auth__intro-img">
+            <p class="auth__intro-text">The best of luxury brand values, high quality products, and innovative services</p>
+            <div class="dots d-none d-md-flex">
+                <div class="dot dot--active"></div>
+                <div class="dot"></div>
+                <div class="arrow-next">
+                    <img src="./assets/icons/arrow-next.svg" alt="arrow-next" class="arrow-next-img">
+                </div>
+            </div>
+        </div>
+        <!-- Auth content -->
+         <div class="auth__content">
+            <div class="auth__content-inner">
+                <a href="./" class="logo">
+                    <img src="./assets/icons/logo.svg" alt="logo" class="logo__img">
+                    <h1 class="logo__title">grocerymart</h1>
+                </a>
+                <h1 class="auth__heading">Sign Up</h1>
+                <p class="auth__desc">Let’s create your account and Shop like a pro and save money.</p>
+                <form action="./sign-in.html" class="form auth__form">
+                    <div class="form__group">
+                        <div class="form-text__input">
+                            <input  type="email" placeholder="Email" class="form__input" required spellcheck="false">
+                            <img src="./assets/icons/email.svg" alt="email" class="form__input-icon">
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <div class="form-text__input">
+                            <input type="password" placeholder="Password" class="form__input" required>
+                            <img src="./assets/icons/lock.svg" alt="lock" class="form__input-icon">
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <div class="form-text__input">
+                            <input type="password" placeholder="Confirm password" class="form__input" required>
+                            <img src="./assets/icons/lock.svg" alt="lock" class="form__input-icon">
+                        </div>
+                    </div>
+                    <div class="form__group form__group-inline">
+                        <label for="form-checkbox" class="checkbox-group">
+                            <input type="checkbox" name="" id="form-checkbox" class="form__checkbox" hidden>
+                            <span class="form__checkbox-label">Set as default card</span>
+                        </label>
+                        <a href="#!" class="auth__link">Recovery Password</a>
+                    </div>
+                    <div class="form-group form__group-actions">
+                        <button class="btn btn--primary">Sign Up</button>
+                        <button class="btn btn--outline">
+                            <img src="./assets/icons/google.svg" alt="google" class="icon-light signin-google">
+                            Sign in with Google</button>
+                    </div>
+                    <div class="form__bottom">
+                        <p class="auth__text">You have account yet?</p>
+                        <a href="./sign-in.html" class="auth__link">Sign In</a>
+                    </div>
+                </form>
+            </div>
+         </div>
+   </main>
+   <script>
+    window.dispatchEvent(new Event('template-loaded'));  
+   </script>
 </body>
-<script>
-    load("#header", "./templates/header.html");
-    load("#footer", "./templates/footer.html")
-</script>
 </html>
