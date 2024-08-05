@@ -1,0 +1,35 @@
+@use '../abstracts';
+
+.search-bar{
+    @include abstracts.flexCenter('center', null);
+    background-color: var(--search-bar-bg);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 50px;
+
+
+    &__input{
+        flex: 1;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.42875;
+        padding-left: 15px;
+        background-color: transparent;
+        height: 100%;
+
+        &::placeholder{
+            color: #9E9DA8;
+            font-weight: 400;
+        }
+    }
+
+    &__icon{
+        width: 24px;
+        height: 24px;
+    }
+
+    &__submit{
+        padding: 15px;
+        height: 100%;
+    }
+}

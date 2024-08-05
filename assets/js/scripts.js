@@ -163,9 +163,10 @@ window.addEventListener('template-loaded', () => {
 
 window.addEventListener('template-loaded', () => {
     let liked = false;
-    const likeBtns = $$('.product-item__like-btn');
+    const likeBtns = $$('.heart-btn');
     likeBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
             liked = !liked;
             if (liked) {
                 btn.classList.add('liked');     
@@ -213,13 +214,35 @@ window.addEventListener('template-loaded', () => {
     const dotElement = $$('.dot')[1];
     const next = $('.arrow-next');
     const contentPart = $('.auth__content')
-    dotElement.addEventListener('click', (e) => {
+    if (dotElement) {
+        dotElement.addEventListener('click', (e) => {
         contentPart.style.transform = 'translateX(0)';
         console.log(contentPart)
     })
+    }
 
-    next.addEventListener('click', (e) => {
+    if (next) {
+        next.addEventListener('click', (e) => {
         contentPart.style.transform = 'translateX(0)';
         console.log(contentPart)
+    })
+    }
+})
+
+window.addEventListener('template-loaded', () => {
+    const productThumb = $$('.prod-review__thumb-img');
+    const productItem = $$('.prod-review__item');
+    productThumb[0].style.cssText = "border-color: #ffb700; opacity: 1";
+    productThumb.forEach(thumb => {
+        thumb.addEventListener('click', (e) => {
+            productThumb.forEach(thumb => {
+                thumb.style.cssText = "border-color: #9e9da8; opacity: 0.8;";
+            })
+            const index = e.target.dataset.index;
+            e.target.style.cssText = "border-color: #ffb700; opacity: 1";
+            productItem.forEach(item => {
+            item.style.transform = `translateX(${-index * 100}%)`;
+        })  
+       })
     })
 })

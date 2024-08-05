@@ -37,8 +37,8 @@
         visibility: visible;
     }
 
-    &__heading, &__form-label{
-        color: var(--filter-heading-color);
+    &__heading{
+        color: var(--form-label-color);
         font-size: 2.2rem;
         font-style: normal;
         font-weight: 500;
@@ -63,42 +63,12 @@
             display: flex;
         }
 
-        &-tags{
-            display: flex;
-            column-gap: 20px;
-            margin-top: 20px;
-        }
-
-        &-tag{
-            color: #9E9DA8;
-            font-size: 1.4rem;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 1.42875;
-            padding: 6px 12px;
-            border-radius: 6px;
-            background-color: var(--filter-tag-bg);
-
-            @include abstracts.screen(sm){
-                padding: 6px 4px;
-            }
-        }
-
         &-group{
             
             &--inline{
                 display: flex;
                 column-gap: 30px;
             }
-        }
-
-        &-label{
-            display: block;
-            &--small{
-                font-size: 1.4rem;
-                line-height: 1.42875;
-                margin-bottom: 10px;
-        }
         }
 
         &-input{
@@ -154,35 +124,7 @@
                 height: 1px;
             }           
         }
-
-        &-select-wrap{
-            margin-top: 20px;
-            display: flex;
-            padding: 5px 14px;
-            background-color: transparent;
-            border-radius: 6px;
-            border: 1px solid #D2D1D6;
-            height: 45px;
-            column-gap: 14px;
-        }
-
-        &-select{
-            color: var(--select-text-color);
-            font-size: 1.4rem;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 1.42875;
-            background-color: transparent;
-        }
-
-        &-select:first-child{
-            width: 129px;
-        }
-
-        &-select:last-child{
-            width: 80px;
-        }
-
+        
         &-input-search{
             height: 22px;
             flex: 1;
@@ -259,11 +201,3 @@
     }
 }
 
-.filter__select-separate{
-    width: 1px;
-    background-color: #D2D1D6;
-}
-
-select option{
-    color:#1A162E;
-}

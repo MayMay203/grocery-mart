@@ -35,7 +35,7 @@ html.dark{
     --filter-bg: #292E39;
     --filter-shadow: rgba(0, 0, 0, 0.40);
     --arrow-up-bg: brightness(0) saturate(100%) invert(11%) sepia(6%) saturate(2957%) hue-rotate(184deg) brightness(93%) contrast(81%);
-    --filter-heading-color: #fff;
+    --form-label-color: #fff;
     --circle-filter-bg: #292E39;
     --filter-tag-bg: #171C28;
     --select-text-color: #fff;
@@ -44,14 +44,7 @@ html.dark{
     --footer-heading-color: #fff;
     --footer-text-color: #B9BABE;
 
-      @include abstracts.screen(lg){
-        --header-shadow: rgba(0, 0, 0, 0.20);
-        --sidebar-bg-color: #292E39;
-        --sidebar-text-color: #B9BABE;
-        --sidebar-shadow: rgba(23, 28, 40, 0.40);
-        --icon-dark-color: brightness(0) saturate(100%) invert(79%) sepia(7%) saturate(105%) hue-rotate(188deg) brightness(92%) contrast(95%);
-    }
-
+    
     // Sign up page
     --auth-intro-bg: #171C28;
     --auth-content-bg:#292E39;
@@ -59,9 +52,24 @@ html.dark{
     --logo-color: #fff;
     --icon-light-color: brightness(0) saturate(100%) invert(82%) sepia(4%) saturate(176%) hue-rotate(191deg) brightness(91%) contrast(91%);
     --dot-bg-color: #292E39;
-
+    
     // Product page
+    --product-page-bg: #292E39;
     --breadcrumbs-bg: #171C28;
     --breadcrumbs-shadow: rgba(23, 28, 40, 0.20);
+    --prod-info-color: #eee;
+    --prod-info-bg: #171C28;
+    --prod-prop-desc: #eee;
+    --search-bar-bg: #171C28;
+    
+    @include abstracts.screen(lg){
+      --header-shadow: rgba(0, 0, 0, 0.20);
+      --sidebar-bg-color: #292E39;
+      --sidebar-text-color: #B9BABE;
+      --sidebar-shadow: rgba(23, 28, 40, 0.40);
+      --icon-dark-color: brightness(0) saturate(100%) invert(79%) sepia(7%) saturate(105%) hue-rotate(188deg) brightness(92%) contrast(95%);
+      --prod-block-bg: #171C28;
+      --breadcrumbs-bg: #171C28;
 
+  }
 }
