@@ -50,6 +50,7 @@ html{
     --prod-prop-desc: #1A162E;
     --prod-block-bg: #fff;
     --search-bar-bg: #fff;
+    --product-content-item-bg: #FAFAFD;
 
     @include abstracts.screen(md){
        --auth-intro-bg: #FFF;
@@ -63,5 +64,6 @@ html{
         --product-page-bg: #FAFAFD;
         --prod-info-bg: #fff;
         --breadcrumbs-bg: #fff;
+        --product-content-item-bg: #Fff;
     }
 }

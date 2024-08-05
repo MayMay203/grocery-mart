@@ -1322,6 +1322,7 @@ html.dark {
   --prod-info-bg: #171C28;
   --prod-prop-desc: #eee;
   --search-bar-bg: #171C28;
+  --product-content-item-bg: #171C28;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1373,6 +1374,7 @@ html {
   --prod-prop-desc: #1A162E;
   --prod-block-bg: #fff;
   --search-bar-bg: #fff;
+  --product-content-item-bg: #FAFAFD;
 }
 @media (max-width: 767.98px) {
   html {
@@ -1388,6 +1390,7 @@ html {
     --product-page-bg: #FAFAFD;
     --prod-info-bg: #fff;
     --breadcrumbs-bg: #fff;
+    --product-content-item-bg: #Fff;
   }
 }
 
@@ -2229,6 +2232,112 @@ html {
   }
 }
 
+.product-tab__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+}
+.product-tab__item {
+  color: #9E9DA8;
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.45455;
+  padding: 8px 20px;
+}
+.product-tab__item--active {
+  color: var(--text-color);
+}
+.product-tab__item:not(.product-tab__item--active) {
+  cursor: pointer;
+}
+
+.product__contents {
+  display: flex;
+  overflow: hidden;
+}
+
+.product__content {
+  width: 100%;
+  flex-shrink: 0;
+  transition: transform 0.5s ease;
+}
+.product__content-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.product__content-heading {
+  margin: 30px 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.41677;
+}
+.product__content-item {
+  border-radius: 16px;
+  padding: 30px;
+  background-color: var(--product-content-item-bg);
+}
+@media (max-width: 1199.98px) {
+  .product__content-item {
+    text-align: center;
+  }
+}
+@media (max-width: 767.98px) {
+  .product__content-item {
+    text-align: left;
+  }
+}
+.product__content-head {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+@media (max-width: 1199.98px) {
+  .product__content-head {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+}
+@media (max-width: 767.98px) {
+  .product__content-head {
+    flex-direction: row;
+  }
+}
+.product__content-info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.product__content-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.45455;
+}
+.product__content-desc {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.product__content-rating {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+@media (max-width: 1199.98px) {
+  .product__content-rating {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
+@media (max-width: 767.98px) {
+  .product__content-rating {
+    flex-direction: row;
+  }
+}
+
 .home {
   margin-bottom: 50px;
 }
@@ -3057,11 +3166,6 @@ html {
   cursor: pointer;
   color: #333;
 }
-@media (max-width: 575.98px) {
-  .form__tag {
-    padding: 6px 4px;
-  }
-}
 
 .select-separate {
   width: 1px;
@@ -3096,6 +3200,77 @@ html {
 .search-bar__submit {
   padding: 15px;
   height: 100%;
+}
+
+.text-content {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+.text-content h1, .text-content h2, .text-content h3, .text-content h4, .text-content h5, .text-content h6 {
+  font-weight: 600;
+}
+.text-content h1 {
+  font-size: 2.6rem;
+}
+.text-content h2 {
+  font-size: 2.4rem;
+}
+.text-content h3 {
+  font-size: 1.8rem;
+}
+.text-content h4 {
+  font-size: 1.7rem;
+}
+.text-content h5 {
+  font-size: 1.5rem;
+}
+.text-content h6 {
+  font-size: 1.4rem;
+}
+.text-content h1, .text-content h2, .text-content h3, .text-content h4, .text-content h5, .text-content h6, .text-content p, .text-content blockquote, .text-content img, .text-content figure, .text-content ol, .text-content ul, .text-content table {
+  margin: 20px 0;
+}
+.text-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+}
+.text-content img + em {
+  display: block;
+  font-style: italic;
+  text-align: center;
+}
+.text-content i, .text-content em {
+  font-style: italic;
+}
+.text-content b, .text-content strong {
+  font-weight: 600;
+}
+.text-content a {
+  color: #0071dc;
+  text-decoration: underline;
+}
+.text-content blockquote {
+  background-color: rgba(119, 218, 230, 0.1);
+  padding: 20px;
+  border-left: 3px solid #77dae6;
+}
+.text-content blockquote p {
+  margin: 0;
+}
+.text-content hr {
+  border: none;
+  height: 1.5px;
+  background-color: #ebebeb;
+}
+.text-content ul {
+  display: block;
+  list-style-type: disc;
+  padding-inline-start: 40px;
+}
+.text-content--margin {
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */

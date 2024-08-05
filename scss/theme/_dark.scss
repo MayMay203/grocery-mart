@@ -61,6 +61,7 @@ html.dark{
     --prod-info-bg: #171C28;
     --prod-prop-desc: #eee;
     --search-bar-bg: #171C28;
+    --product-content-item-bg: #171C28;
     
     @include abstracts.screen(lg){
       --header-shadow: rgba(0, 0, 0, 0.20);

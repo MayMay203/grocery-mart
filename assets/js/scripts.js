@@ -246,3 +246,22 @@ window.addEventListener('template-loaded', () => {
        })
     })
 })
+
+window.addEventListener('template-loaded', () => {
+    const productTabs = $$('.product-tab__item');
+    const productContents = $$('.product__content');
+    productTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            const index = e.target.dataset.index;
+            console.log(index);
+            productTabs.forEach(tab => {
+                tab.classList.remove('product-tab__item--active');
+            })
+            e.target.classList.add('product-tab__item--active');
+            productContents.forEach(content => {
+                content.style.transform = `translateX(${-index * 100}%)`;
+                console.log(content)
+            })
+        })
+    })
+})

@@ -201,5 +201,117 @@
      @include abstracts.screen(xxl){
         padding-left: 10px;
     }
+}
 
+.product-tab{
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+       margin-left: -20px;
+
+    }
+
+    &__item{
+        color:#9E9DA8;
+        font-size: 2.2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.45455;
+        padding: 8px 20px;
+
+        &--active{
+            color: var(--text-color);
+        }
+
+        &:not(&--active){
+            cursor: pointer;
+        }
+    }
+}
+
+
+.product__contents{
+    display: flex;
+    overflow: hidden;
+}
+
+.product__content{
+    width: 100%;
+    flex-shrink: 0;
+    transition: transform .5s ease;
+
+    &-img{
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    &-heading{
+        margin: 30px 0;
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1.41677;
+    }
+
+    &-item{
+        border-radius: 16px;
+        padding: 30px;
+        background-color: var(--product-content-item-bg);
+        
+        @include abstracts.screen(xl){
+           text-align: center
+        }
+
+         @include abstracts.screen(md){
+           text-align: left
+        }
+    }
+
+    &-head{
+        @include abstracts.flexCenter('center', null);
+        column-gap: 20px;
+
+        @include abstracts.screen(xl){
+            flex-direction: column;
+            row-gap: 20px;
+        }
+
+        @include abstracts.screen(md){
+            flex-direction: row;
+        }
+    }
+
+    &-info{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    &-title{
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 1.45455;
+    }
+
+    &-desc{
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    &-rating{
+        margin-top: 20px;
+        @include abstracts.flexCenter('center', null);
+        column-gap: 20px;
+
+        @include abstracts.screen(xl){
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+         @include abstracts.screen(md){
+            flex-direction: row;
+        }
+    }
 }

@@ -70,10 +70,6 @@
                 cursor: pointer;
                 color: #333;
             }
-
-            @include abstracts.screen(sm){
-                padding: 6px 4px;
-            }
         }
 
 }
