@@ -16,7 +16,7 @@
     transition-duration: .2s;
 
     @include abstracts.screen(xl){
-        width: 85vw;
+        // width: 80vw;
     }
 
     @include abstracts.screen(sm){
@@ -46,7 +46,7 @@
     }
 
     &__heading, &__row-actions, &__row-content{
-        padding: 0 30px;
+        padding: 0 20px;
     }
 
    &__form{
@@ -206,16 +206,16 @@
 
             @include abstracts.screen(sm){
                 position: sticky;
-                bottom: 30px;
+                bottom: 20px;
                 background-color: var(--filter-bg);
             }
         }
 
         &-content{
-            max-height: calc(100vh - 350px);
+            max-height: calc(100vh - 205px);
             overflow-y: auto;
             overscroll-behavior: contain;
-            @include abstracts.screen (xl){
+            @include abstracts.screen (lg){
                 flex-direction: column;
                 row-gap: 20px;
             }

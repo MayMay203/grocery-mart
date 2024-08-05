@@ -48,6 +48,11 @@ html{
     --desc-auth-color: #9E9DA8;
     --dot-bg-color: #EDEDF6;
 
+    // Product page
+    --product-page-bg: #fff;
+    --breadcrumbs-bg: #F6F6F6;
+    --breadcrumbs-shadow: rgba(237, 237, 246, 0.20);
+
     @include abstracts.screen(md){
        --auth-intro-bg: #FFF;
     }

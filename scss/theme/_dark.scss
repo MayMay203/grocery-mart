@@ -59,4 +59,9 @@ html.dark{
     --logo-color: #fff;
     --icon-light-color: brightness(0) saturate(100%) invert(82%) sepia(4%) saturate(176%) hue-rotate(191deg) brightness(91%) contrast(91%);
     --dot-bg-color: #292E39;
+
+    // Product page
+    --breadcrumbs-bg: #171C28;
+    --breadcrumbs-shadow: rgba(23, 28, 40, 0.20);
+
 }

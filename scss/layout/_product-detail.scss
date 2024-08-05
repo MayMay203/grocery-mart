@@ -1,0 +1,10 @@
+@use '../abstracts';
+
+.product-container{
+    padding-top: 30px;
+}
+
+.product-page{
+    background-color: var(--product-page-bg);
+    min-height: 80vh;
+}
