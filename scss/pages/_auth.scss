@@ -137,123 +137,11 @@
     }
 }
 
-.form{
-    &:has(:invalid) &__submit-btn{
-        opacity: 0.5;
-        pointer-events: none;
-    }
+.auth-form{
     width: 100%;
-
-    &-text__input{
-        @include abstracts.flexCenter('center', null);
-        padding: 12px;
-        border-radius: 10px;
-        border: 1px solid hsl(252, 6%, 83%);
-        height: 50px;
-        width: 100%;
-
-         @include abstracts.screen(md){
-               height: 48px;
-        }
-    }
-
-    &__input{
-        flex: 1;
-        height: 26px;
-        font-size: 1.8rem;
-        font-weight: 500;
-        line-height: 1.4444;
-        padding-right: 4px;
-        background-color: transparent;
-
-         @include abstracts.screen(md){
-                font-size: 1.6rem;
-        }
-    }
-
-     &__input::placeholder{
-        color: var(--input-auth-text-color);
-     }
-
+    
     &__input-icon{
         width: 24px;
-    }
-
-    &__input-error{
-        width: 24px;
-        display: none;
-        animation: shake .5s;
-    }
-
-    &__group{
-        &-actions{
-            margin-top: 50px;
-            display: flex;
-            flex-direction: column;
-            row-gap: 30px;
-        }
-    }
-
-    &__group:has(:invalid):has(&__input:not(:placeholder-shown)){
-        .form__input-icon{
-            display: none;
-        }
-
-        .form__error,
-        .form__input-error{
-            display: block;
-        }
-
-        .form-text__input{
-            border-color: red;
-            background-color: rgba($color: red, $alpha: 0.1);
-        }
-    }
-    &__group ~ &__group{
-        margin-top: 30px;
-
-         @include abstracts.screen(md){
-                margin-top: 20px;
-        }
-    }
-
-    &__group-inline{
-        @include abstracts.flexCenter('center', 'space-between');
-    }
-
-    &__checkbox{
-        &:checked ~ .form__checkbox-label::after{
-            content: "";
-            width: 12px;
-            height: 7px;
-            border-bottom: 2px solid #9E9DA8;
-            border-left: 2px solid #9E9DA8;
-            position: absolute;
-            top: 5px;
-            left: -24px;
-            rotate: -45deg;
-        }
-    }
-    &__checkbox-label{
-        font-size: 1.5rem;
-        color: var(--desc-auth-color);
-        position: relative;
-
-         @include abstracts.screen(md){
-                font-size: 1.4rem;
-        }
-
-        &::before{
-            content: "";
-            width: 20px;
-            height: 20px;
-            background-color: transparent;
-            border-radius: 6px;
-            border: 2px solid #9E9DA8;
-            position: absolute;
-            top: 0;
-            left: -28px;
-        }
     }
 
     &__bottom{
@@ -266,14 +154,7 @@
         }
     }
 
-    &__error{
-        text-align: left;
-        margin-top: 10px;
-        color: red;
-        font-size: 1.4rem;
-        font-weight: 500;
-        display: none;
-    }
+    
 }
 
 .checkbox-group{
@@ -299,5 +180,4 @@
 .auth__content-sign-in{
     transform: translateX(0);
 }
-
 

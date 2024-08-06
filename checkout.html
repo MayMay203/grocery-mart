@@ -113,7 +113,7 @@
                                                         class="liked-btn liked-btn-checkout">
                                                     Save
                                                 </button>
-                                                <button class="cart-item__ctrl-btn delete-btn">
+                                                <button class="cart-item__ctrl-btn delete-btn js-toggle" toggle-target="#delete-confirm">
                                                     <img src="./assets/icons/delete.svg" alt="delete">
                                                     Delete
                                                 </button>
@@ -166,7 +166,7 @@
                                                         class="liked-btn liked-btn-checkout">
                                                     Save
                                                 </button>
-                                                <button class="cart-item__ctrl-btn delete-btn">
+                                                <button class="cart-item__ctrl-btn delete-btn js-toggle" toggle-target="#delete-confirm">
                                                     <img src="./assets/icons/delete.svg" alt="delete">
                                                     Delete
                                                 </button>
@@ -219,7 +219,7 @@
                                                         class="liked-btn liked-btn-checkout">
                                                     Save
                                                 </button>
-                                                <button class="cart-item__ctrl-btn delete-btn">
+                                                <button class="cart-item__ctrl-btn delete-btn js-toggle" toggle-target="#delete-confirm">
                                                     <img src="./assets/icons/delete.svg" alt="delete">
                                                     Delete
                                                 </button>
@@ -307,19 +307,16 @@
         load("#footer", "./templates/footer.html");
         window.dispatchEvent(new Event('template-loaded'));
     </script>
-    <script>
-        window.dispatchEvent(new Event('template-loaded'));
-    </script>
-    <!-- Modal -->
-     <div class="modal hide">
+    <!--  Modal confirm remove shopping cart item-->
+     <div id="delete-confirm" class="modal modal--small hide">
         <div class="modal__content">
             <div class="modal__text">Do you want to remove this item from shopping cart?</div>
             <div class="modal__bottom">
-                <button class="btn btn--text btn--small modal__btn modal__cancel-btn">Cancel</button>
+                <button class="btn btn--text btn--small modal__btn modal__cancel-btn js-toggle" toggle-target="#delete-confirm">Cancel</button>
                 <button class="btn btn--primary btn--small modal__btn modal__confirm-btn">Confirm</button>
             </div>
         </div>
-        <div class="modal__overlay"></div>
+        <div class="modal__overlay js-toggle" toggle-target="#delete-confirm"></div>
      </div>
 </body>
 

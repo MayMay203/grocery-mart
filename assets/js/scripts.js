@@ -270,54 +270,42 @@ window.addEventListener('template-loaded', () => {
     })
 })
 
-window.addEventListener('template-loaded', () => {
-    const upBtns = document.querySelectorAll('.up-btn');
-    const downBtns = document.querySelectorAll('.down-btn');
+/**
+ * JS toggle
+ *
+ * Cách dùng:
+ * <button class="js-toggle" toggle-target="#box">Click</button>
+ * <div id="box">Content show/hide</div>
+ */
+window.addEventListener("template-loaded", initJsToggle);
 
-    upBtns.forEach(btn => {
-        if (!btn.classList.contains('click-bound')) {
-            btn.addEventListener('click', (e) => {
-                const inputValue = e.target.parentElement.querySelector('.cart-item__value');
-                let value = parseInt(inputValue.innerText, 10); 
-                value++; 
-                inputValue.innerText = value;
+function initJsToggle() {
+    $$(".js-toggle").forEach((button) => {
+        const target = button.getAttribute("toggle-target");
+        console.log(target);
+        if (!target) {
+            document.body.innerText = `Cần thêm toggle-target cho: ${button.outerHTML}`;
+        }
+        button.onclick = (e) => {
+            e.preventDefault();
+
+            if (!$(target)) {
+                return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
+            }
+            const isHidden = $(target).classList.contains("hide");
+
+            requestAnimationFrame(() => {
+                $(target).classList.toggle("hide", !isHidden);
+                $(target).classList.toggle("show", isHidden);
             });
-            btn.classList.add('click-bound');
-        }
+        };
+        document.onclick = function (e) {
+            if (!e.target.closest(target)) {
+                const isHidden = $(target).classList.contains("hide");
+                if (!isHidden) {
+                    button.click();
+                }
+            }
+        };
     });
-
-    downBtns.forEach(btn => {
-        if (!btn.classList.contains('click-bound')) {
-            btn.addEventListener('click', (e) => {
-                const inputValue = e.target.parentElement.querySelector('.cart-item__value');
-                let value = parseInt(inputValue.innerText, 10); 
-                value--; 
-                inputValue.innerText = value; 
-            });
-            btn.classList.add('click-bound');
-        }
-    });
-
-    const deleteBtns = $$('.delete-btn');
-    const modal = $('.modal');
-    const cancelBtns = $$('.modal__cancel-btn');
-    const modalContent = $('.modal__content');
-    const overlay = $('.modal__overlay');
-    deleteBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            modal.style.cssText = 'opacity: 1; visibility: visible;'
-        })
-    })
-
-    cancelBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            modal.style.cssText = 'opacity: 0; visibility: hidden;'
-        })
-    })
-
-    overlay.addEventListener('click', (e) => {
-        if (!e.target.contains(modalContent)) {
-            modal.style.cssText = 'opacity: 0; visibility: hidden;'
-        }
-    })
-});
+}
