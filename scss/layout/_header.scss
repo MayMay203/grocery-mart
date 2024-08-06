@@ -197,13 +197,13 @@
             &-wrap{
                 position: relative;
 
-                &::before{
+                &:hover::before{
                     content: "";
                     position: absolute;
                     right: -48%;
-                    top: 100%;
+                    top: 90%;
                     width: min(500px, 100vw);
-                    height: 24px;
+                    height: 30px;
                     background-color: transparent;
                 }
 
@@ -291,7 +291,6 @@
 
     &__bottom{
         padding: 30px 0;
-        border-top: 1px solid var(--act-dropdown-bottom-border);
         border-bottom: 1px solid var(--act-dropdown-bottom-border);
     }
 
@@ -315,6 +314,7 @@
     &__list{
         flex-wrap: nowrap;
         overflow-x: auto;
+        border-bottom: 1px solid var(--act-dropdown-bottom-border);
     }
 
     &__arrow{
@@ -359,9 +359,9 @@
 
 .checkout-btn{
     height: 60px!important;
-    font-size: 2rem!important;
+    font-size: 1.9rem!important;
     line-height: 1.45455;
-    width: 278px;
+    width: 250px;
     margin-left: auto;
 }
 
