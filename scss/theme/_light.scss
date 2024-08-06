@@ -58,6 +58,14 @@ html{
     --cart-preview-item-thumb-bg: #f2f2f2;
     --act-dropdown-bottom-border: #D2D1D6;
 
+    // Checkout page
+    --breadcrumbs-checkout-bg: #fff;
+    --cart-info-bg: #fff;
+    --cart-info-shadow: rgba(237, 237, 246, 0.20);
+    --cart-info-color: #1A162E;
+    --text-input-border: #D2D1D6;
+    
+
     @include abstracts.screen(md){
        --auth-intro-bg: #FFF;
     }

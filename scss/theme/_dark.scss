@@ -63,6 +63,7 @@ html.dark{
     --search-bar-bg: #171C28;
     --product-content-item-bg: #171C28;
     --card-preview-thumb-bg: #272c36;
+    --cart-info-color: #B9BABE;
 
     // Act dropdown
     --act-dropdown-bg: #292E39;
@@ -70,6 +71,14 @@ html.dark{
     --act-dropdown-color: #B9BABE;
     --act-dropdown-bottom-border: #171C28;
     --cart-preview-item-thumb-bg: #272c36;
+
+    // Checkout page
+     --breadcrumbs-checkout-bg: #171C28;
+     --cart-info-bg: #171C28;
+     --cart-info-shadow: rgba(23, 28, 40, 0.20);
+     --text-input-border: #292E39;
+
+
     
     @include abstracts.screen(lg){
       --header-shadow: rgba(0, 0, 0, 0.20);

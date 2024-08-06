@@ -232,8 +232,11 @@ window.addEventListener('template-loaded', () => {
 window.addEventListener('template-loaded', () => {
     const productThumb = $$('.prod-review__thumb-img');
     const productItem = $$('.prod-review__item');
+    if (productThumb) {
+        if (productThumb[0]) {
     productThumb[0].style.cssText = "border-color: #ffb700; opacity: 1";
-    productThumb.forEach(thumb => {
+}
+        productThumb.forEach(thumb => {
         thumb.addEventListener('click', (e) => {
             productThumb.forEach(thumb => {
                 thumb.style.cssText = "border-color: #9e9da8; opacity: 0.8;";
@@ -245,6 +248,7 @@ window.addEventListener('template-loaded', () => {
         })  
        })
     })
+    }
 })
 
 window.addEventListener('template-loaded', () => {
@@ -265,3 +269,32 @@ window.addEventListener('template-loaded', () => {
         })
     })
 })
+
+window.addEventListener('template-loaded', () => {
+    const upBtns = document.querySelectorAll('.up-btn');
+    const downBtns = document.querySelectorAll('.down-btn');
+
+    upBtns.forEach(btn => {
+        if (!btn.classList.contains('click-bound')) {
+            btn.addEventListener('click', (e) => {
+                const inputValue = e.target.parentElement.querySelector('.cart-item__value');
+                let value = parseInt(inputValue.innerText, 10); 
+                value++; 
+                inputValue.innerText = value;
+            });
+            btn.classList.add('click-bound');
+        }
+    });
+
+    downBtns.forEach(btn => {
+        if (!btn.classList.contains('click-bound')) {
+            btn.addEventListener('click', (e) => {
+                const inputValue = e.target.parentElement.querySelector('.cart-item__value');
+                let value = parseInt(inputValue.innerText, 10); 
+                value--; 
+                inputValue.innerText = value; 
+            });
+            btn.classList.add('click-bound');
+        }
+    });
+});

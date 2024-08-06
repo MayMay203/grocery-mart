@@ -1,0 +1,294 @@
+@use '../abstracts';
+
+.checkout-page{
+    padding-bottom: 50px;
+}
+
+.cart-info{
+    background-color: var(--cart-info-bg);
+    border-radius: 20px;
+    box-shadow: 0px 20px 60px 10px var(--cart-info-shadow);
+    padding: 30px;
+    color: var(--cart-info-color);
+
+    @include abstracts.screen(sm){
+        padding: 20px;
+    }
+
+    &__list{
+        margin-top: -30px;
+    }
+
+    & + &{
+        margin-top: 30px;
+    }
+
+    &__back{
+        padding: 6px;
+        @include abstracts.flexCenter('center', 'center');
+    }
+
+    &__separate{
+        height: 1px;
+        width: 100%;
+        background-color: var(--text-input-border);
+        margin: 30px 0;
+    }
+
+    &__link{
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.4444;
+    }
+
+    &__total{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+
+        @include abstracts.screen(md){
+            flex-direction: column-reverse
+        }
+        
+        &-left{
+            @include abstracts.flexCenter('center', null);
+            column-gap: 10px;
+            align-self: flex-end;
+             @include abstracts.screen(md){
+                margin-top: 30px;
+                align-self: flex-start;
+           }
+        }
+
+        &-right{
+            width: 287px;
+
+            @include abstracts.screen(md){
+              width: 100%;
+           }
+        }
+
+        &-row{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.4444;
+        }
+
+        &-pay{
+            font-size: 2.2rem;
+            margin-bottom: 0;
+        }
+    }
+
+    &__subtotal-row{
+        font-size: 1.6rem;
+        line-height: 1.5;
+    }
+
+    &__note{
+        font-weight: 400;
+    }
+
+    &__sub-separate{
+        margin-top: 0;
+        margin-bottom: 14px;
+    }
+}
+
+.cart-item{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--text-input-border);
+
+    @include abstracts.screen(sm){
+        padding: 16px 0;
+    }
+
+    &__thumb{
+        width: 172px;
+        height: 172px;
+        object-fit: cover;
+
+        @include abstracts.screen(md){
+            width: 150px;
+            height: 150px;
+        }
+
+         @include abstracts.screen(sm){
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    &__title{
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.4444;
+        margin-bottom: 16px;
+    }
+
+    &__status,
+    &__price-wrap{
+        color: #9E9DA8;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.4444;
+        margin-bottom: 16px;
+    }
+
+    &__status{
+        color: #67B044;
+    }
+
+    &__content{
+        @include abstracts.flexCenter(null, 'space-between');
+
+        @include abstracts.screen(lg){
+            flex-direction: column;
+        }
+    }
+
+    &__input{
+        height: 44px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 1px solid var(--text-input-border);
+
+        @include abstracts.screen(sm){
+            width: 60%;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__ctrl{
+        display: flex;
+        column-gap: 20px;
+
+         @include abstracts.screen(md){
+            flex-direction: column;
+        }
+    }
+
+    &__value{
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.47;
+        width: 20px;
+    }
+
+    &__up-down{
+        @include abstracts.flexCenter('center', null);
+        column-gap: 10px;
+
+        @include abstracts.screen(md){
+            justify-content: space-between;
+        }
+    }
+
+    &__select{
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.47;
+        background-color: transparent;
+        width: 100%;
+    }
+
+    &__content-right{
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+    }
+
+    &__right{
+        &-price{
+            text-align: right;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.45455;
+
+            @include abstracts.screen(lg){
+                text-align: left;
+                margin: 16px 0 10px;
+          }
+        }
+
+        &-ctrl{
+            display: flex;
+            column-gap: 30px;
+            margin-bottom: 8px;
+
+            @include abstracts.screen(sm){
+                column-gap: 10px;
+            }
+        }
+    }
+
+    &__ctrl-btn{
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            color: #9E9DA8;
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 1.5;
+
+            &:hover{
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+
+}
+
+.down-btn:hover,
+.up-btn:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.gift-item{
+    @include abstracts.flexCenter('center', null);
+    column-gap: 20px;
+
+    &__desc{
+        margin-top: 10px;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.42857;
+    }
+
+    &__img-wrap{
+        @include abstracts.flexCenter('center', 'center');
+        flex-shrink: 0;
+        width: 76px;
+        height: 76px;
+        border-radius: 14px;
+        background: var(--Purple-Purple-10, linear-gradient(0deg, rgba(255, 255, 255, 0.90)0%, rgba(255, 255, 255, 0.90)100%), #7644E1);
+        box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.20);
+    }
+
+    &__img{
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+    }
+
+    &__title{
+        margin-bottom: 0;
+    }
+}
+
+.liked-btn-checkout{
+    margin-top: 0;
+    filter: brightness(0) saturate(100%) invert(26%) sepia(93%) saturate(7499%) hue-rotate(358deg) brightness(106%) contrast(121%);
+}
+
+.continue-checkout-btn{
+    margin-top: 30px;
+}
