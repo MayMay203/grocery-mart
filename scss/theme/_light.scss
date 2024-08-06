@@ -52,6 +52,12 @@ html{
     --search-bar-bg: #fff;
     --product-content-item-bg: #FAFAFD;
 
+    // Act dropdown
+    --act-dropdown-bg: #fff;
+    --act-dropdown-shadow: rgba(200, 200, 200, 0.40);
+    --cart-preview-item-thumb-bg: #f2f2f2;
+    --act-dropdown-bottom-border: #D2D1D6;
+
     @include abstracts.screen(md){
        --auth-intro-bg: #FFF;
     }
