@@ -1,7 +1,60 @@
+@use '../abstracts';
+
+.checkout-page{
+    padding-bottom: 50px;
+}
+
 .checkout-container{
     margin-top: 30px;
 
     .breadcrumbs{
-        background-color: var(--breadcrumbs-checkout-bg);
+        background-color: var(--breadcrumbs-custom-bg);
     }
+}
+
+.down-btn:hover,
+.up-btn:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.gift-item{
+    @include abstracts.flexCenter('center', null);
+    column-gap: 20px;
+
+    &__desc{
+        margin-top: 10px;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.42857;
+    }
+
+    &__img-wrap{
+        @include abstracts.flexCenter('center', 'center');
+        flex-shrink: 0;
+        width: 76px;
+        height: 76px;
+        border-radius: 14px;
+        background: var(--Purple-Purple-10, linear-gradient(0deg, rgba(255, 255, 255, 0.90)0%, rgba(255, 255, 255, 0.90)100%), #7644E1);
+        box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.20);
+    }
+
+    &__img{
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+    }
+
+    &__title{
+        margin-bottom: 0;
+    }
+}
+
+.liked-btn-checkout{
+    margin-top: 0!important;
+    filter: brightness(0) saturate(100%) invert(26%) sepia(93%) saturate(7499%) hue-rotate(358deg) brightness(106%) contrast(121%);
+}
+
+.continue-checkout-btn{
+    margin-top: 30px;
 }

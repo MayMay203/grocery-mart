@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/main.css">
-    <title>Check out | Grocery Mart</title>
+    <title>Shipping | Grocery Mart</title>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
@@ -37,10 +37,10 @@
     <script>
         load("#header", "./templates/header-logined.html");
     </script>
-    <main class="checkout-page">
+    <main class="shipping-page">
         <div class="container">
             <!-- Breadcrumbs and search bar -->
-            <div class="checkout-container">
+            <div class="shipping-container">
                 <!-- Search bar -->
                 <div class="search-bar d-none d-md-flex">
                     <input type="text" class="search-bar__input" placeholder="Search for item">
@@ -57,17 +57,91 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#!" class="breadcrumbs__link breadcrumb--active">
+                        <a href="#!" class="breadcrumbs__link">
                             Checkout
+                            <img src="./assets/icons/arrow-right.svg" alt="arrow-right" class="icon-light breadcrumbs__icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!" class="breadcrumbs__link breadcrumbs__link--active">
+                            Shipping
                         </a>
                     </li>
                 </ul>
             </div>
             <!--Checkout Content -->
-            <div class="checkout-container">
+            <div class="shipping-container">
                 <div class="row gy-xl-3">
                     <div class="col-8 col-xl-12">
                         <div class="cart-info">
+                            <h1 class="cart-info__heading">1. Shipping, arrives between Mon, May 16—Tue, May 24</h1>
+                            <div class="cart-info__separate"></div>
+                            <!-- Checkout address -->
+                             <div class="user-address">
+                                <div class="user-address__top">
+                                    <div>
+                                        <h2 class="user-address__heading">Shipping address</h2>
+                                        <p class="user-user-address__desc">Where should we deliver your order?</p>
+                                    </div>
+                                    <button href="#!" class="btn btn--primary btn--rounded user-address__link">
+                                        <img src="./assets/icons/add.svg" alt="add-icon">
+                                        Add a new address
+                                    </button>
+                                </div>
+                                <div class="user-address__list">
+                                    <!-- User address 1 -->
+                                    <article class="address__card">
+                                        <div class="address__card-left">
+                                            <div class="address__card-choose">
+                                               <label for="address__card-label">
+                                                    <input type="radio" class="address__card-radio" name="address-card" checked>
+                                               </label>
+                                            </div>
+                                            <div class="address__card-info">
+                                                <h3 class="address__card-title">Imran Khan</h3>
+                                                <p class="user-address__desc">Museum of Rajas, Sylhet Sadar, Sylhet 3100.</p>
+                                                <ul class="address__card-list">
+                                                    <li class="address__card-item">Shipping</li>
+                                                    <li class="address__card-item">Delivery from store</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="address__card-right">
+                                            <button class="address__card-btn">
+                                                <img src="./assets/icons/edit.svg" alt="edit" class="icon-light edit-icon">
+                                                Edit
+                                            </button>
+                                        </div>
+                                    </article>
+                                    <!-- User address 2 -->
+                                    <article class="address__card">
+                                        <div class="address__card-left">
+                                            <div class="address__card-choose">
+                                                <div class="address__card-choose">
+                                                    <label for="address__card-label">
+                                                        <input type="radio" class="address__card-radio" name="address-card">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="address__card-info">
+                                                <h3 class="address__card-title">Imran Khan</h3>
+                                                <p class="user-address__desc">Al Hamra City (10th Floor), Hazrat Shahjalal Road, Sylhet, Sylhet, Bangladesh</p>
+                                                <ul class="address__card-list">
+                                                    <li class="address__card-item">Shipping</li>
+                                                    <li class="address__card-item">Delivery from store</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="address__card-right">
+                                            <button class="address__card-btn">
+                                                <img src="./assets/icons/edit.svg" alt="edit" class="icon-light edit-icon">
+                                                Edit
+                                            </button>
+                                        </div>
+                                    </article>
+                                </div>
+                             </div>
+                             <h2 class="cart-item__heading">Items details</h2>
                             <div class="cart-info__list">
                                 <!-- Cart-item 1 -->
                                 <article class="cart-item">
@@ -133,7 +207,7 @@
                                                     Espresso Arabica and Robusta
                                                     Beans</a></h3>
                                             <p class="cart-item__price-wrap">
-                                                $47.00 | <span class="cart-item__status">In Stock</span>
+                                                $53.00 | <span class="cart-item__status">In Stock</span>
                                             </p>
                                             <div class="cart-item__ctrl">
                                                 <div class="cart-item__input">
@@ -156,7 +230,7 @@
                                         </div>
                                         <div class="cart-item__content-right">
                                             <span class="cart-item__right-price">
-                                                $47.00
+                                                $106
                                             </span>
                                             <div class="cart-item__right-ctrl">
                                                 <button class="heart-btn cart-item__ctrl-btn">
@@ -186,7 +260,7 @@
                                                     Espresso Arabica and Robusta
                                                     Beans</a></h3>
                                             <p class="cart-item__price-wrap">
-                                                $47.00 | <span class="cart-item__status">In Stock</span>
+                                                $38.65 | <span class="cart-item__status">In Stock</span>
                                             </p>
                                             <div class="cart-item__ctrl">
                                                 <div class="cart-item__input">
@@ -209,7 +283,7 @@
                                         </div>
                                         <div class="cart-item__content-right">
                                             <span class="cart-item__right-price">
-                                                $47.00
+                                            $38.65
                                             </span>
                                             <div class="cart-item__right-ctrl">
                                                 <button class="heart-btn cart-item__ctrl-btn">
@@ -236,19 +310,7 @@
                                     <a href="./" class="cart-info__link">Continue Shopping</a>
                                 </div>
                                 <div class="cart-info__total-right">
-                                    <div class="cart-info__total-row">
-                                        <span class="cart-info__label">Subtotal:</span>
-                                        <span class="cart-inf__price">$191.65</span>
-                                    </div>
-                                    <div class="cart-info__total-row">
-                                        <span class="cart-info__label">Shipping:</span>
-                                        <span class="cart-info__price">$10:00</span>
-                                    </div>
-                                    <div class="cart-info__separate"></div>
-                                    <div class="cart-info__total-row cart-info__total-pay">
-                                        <span class="cart-info__label">Total:</span>
-                                        <span class="cart-info__price">$201.65</span>
-                                    </div>
+                                    <a href="./payment.html" class="btn btn--primary btn--rounded continue-btn">Continue</a>
                                 </div>
                             </div>
                         </div>
@@ -276,24 +338,6 @@
                                 </p>
                                 <span class="cart-info__price">$201.65</span>
                             </div>
-                            <a href="./shipping.html" class="btn btn--primary btn--rounded continue-checkout-btn">Continue to checkout</a>
-                        </div>
-                        <div class="cart-info">
-                            <a href="#!">
-                                <article class="gift-item">
-                                    <div class="gift-item__img-wrap">
-                                        <img src="./assets/icons/gift.svg" alt="gift" class="gift-item__img">
-                                    </div>
-                                    <div class="gift-item__content">
-                                        <h3 class="cart-item__title gift-item__title">
-                                            Send this order as a gift.
-                                        </h3>
-                                        <p class="gift-item__desc">Available items will be shipped to your gift
-                                            recipient.
-                                        </p>
-                                    </div>
-                                </article>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -310,7 +354,7 @@
     <script>
         window.dispatchEvent(new Event('template-loaded'));
     </script>
-    <!-- Modal -->
+    <!--  Modal -->
      <div class="modal hide">
         <div class="modal__content">
             <div class="modal__text">Do you want to remove this item from shopping cart?</div>

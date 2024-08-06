@@ -59,15 +59,17 @@ html{
     --act-dropdown-bottom-border: #D2D1D6;
 
     // Checkout page
-    --breadcrumbs-checkout-bg: #fff;
+    --breadcrumbs-custom-bg: #fff;
     --cart-info-bg: #fff;
     --cart-info-shadow: rgba(237, 237, 246, 0.20);
     --cart-info-color: #1A162E;
     --text-input-border: #D2D1D6;
     // Dialog
-    --dialog-bg: #fff;
-    --dialog-confirm-btn:#FFB700;
+    --modal-bg: #fff;
+    --modal-confirm-btn:#FFB700;
     --cancel-border:#fff; 
+    // Shipping
+    --checkbox-border: #1A162E;
 
 
     @include abstracts.screen(md){

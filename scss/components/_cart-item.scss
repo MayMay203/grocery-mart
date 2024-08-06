@@ -1,9 +1,5 @@
 @use '../abstracts';
 
-.checkout-page{
-    padding-bottom: 50px;
-}
-
 .cart-info{
     background-color: var(--cart-info-bg);
     border-radius: 20px;
@@ -13,6 +9,12 @@
 
     @include abstracts.screen(sm){
         padding: 20px;
+    }
+
+    &__heading{
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1.41667;
     }
 
     &__list{
@@ -96,6 +98,10 @@
         margin-top: 0;
         margin-bottom: 14px;
     }
+
+    &__heading{
+
+    }
 }
 
 .cart-item{
@@ -159,9 +165,12 @@
         border-radius: 10px;
         border: 1px solid var(--text-input-border);
 
+         @include abstracts.screen(md){
+            max-width: 180px;
+        }
+
         @include abstracts.screen(sm){
-            width: 60%;
-            margin-bottom: 20px;
+            max-width: 150px;
         }
     }
 
@@ -169,7 +178,8 @@
         display: flex;
         column-gap: 20px;
 
-         @include abstracts.screen(md){
+        @include abstracts.screen(md){
+            row-gap: 10px;
             flex-direction: column;
         }
     }
@@ -223,6 +233,10 @@
             column-gap: 30px;
             margin-bottom: 8px;
 
+            @include abstracts.screen(xl){
+                column-gap: 20px;
+            }
+
             @include abstracts.screen(sm){
                 column-gap: 10px;
             }
@@ -244,51 +258,4 @@
             }
         }
 
-}
-
-.down-btn:hover,
-.up-btn:hover{
-    cursor: pointer;
-    opacity: 0.8;
-}
-
-.gift-item{
-    @include abstracts.flexCenter('center', null);
-    column-gap: 20px;
-
-    &__desc{
-        margin-top: 10px;
-        font-size: 1.4rem;
-        font-weight: 400;
-        line-height: 1.42857;
-    }
-
-    &__img-wrap{
-        @include abstracts.flexCenter('center', 'center');
-        flex-shrink: 0;
-        width: 76px;
-        height: 76px;
-        border-radius: 14px;
-        background: var(--Purple-Purple-10, linear-gradient(0deg, rgba(255, 255, 255, 0.90)0%, rgba(255, 255, 255, 0.90)100%), #7644E1);
-        box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.20);
-    }
-
-    &__img{
-        width: 56px;
-        height: 56px;
-        object-fit: cover;
-    }
-
-    &__title{
-        margin-bottom: 0;
-    }
-}
-
-.liked-btn-checkout{
-    margin-top: 0;
-    filter: brightness(0) saturate(100%) invert(26%) sepia(93%) saturate(7499%) hue-rotate(358deg) brightness(106%) contrast(121%);
-}
-
-.continue-checkout-btn{
-    margin-top: 30px;
 }
