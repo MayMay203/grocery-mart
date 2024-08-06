@@ -1,4 +1,67 @@
+@use '../abstracts';
+
+%fill-screen{
+      position: fixed;
+    inset: 0;
+}
+
 .dialog{
-    // position: fixed;
-    // inset: 0;
+    @include abstracts.flexCenter('center', 'center');
+    @extend %fill-screen;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility, opacity .5s ease;
+
+    &__overlay{
+        @extend %fill-screen;
+        background-color: rgba($color: #000, $alpha: 0.4);
+    }
+
+    &__content{
+        max-width: min(450px, 100% - 40px);
+        position: relative;
+        background-color: var(--dialog-bg);
+        z-index: 100;
+        border-radius: 20px;
+        box-shadow: 0px 20px 60px 10px var( --cart-info-shadow);
+        padding: 30px;
+    }
+
+    &__text{
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    &__bottom{
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        column-gap: 30px;
+    }
+
+    &__confirm-btn{
+        background-color: var(--dialog-confirm-btn);
+        color: var(--confirm-btn-color);
+    }
+
+    &__cancel-btn{
+        border: 1px solid var(--cancel-border);
+    }
+
+    @include abstracts.screen(md){
+        &__content{
+            padding: 20px;
+        }
+
+        &__bottom{
+            gap: 20px;
+        }
+
+        &__btn{
+            flex: 1;
+        }
+    }
 }

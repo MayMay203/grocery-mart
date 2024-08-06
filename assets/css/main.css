@@ -1334,6 +1334,10 @@ html.dark {
   --cart-info-bg: #171C28;
   --cart-info-shadow: rgba(23, 28, 40, 0.20);
   --text-input-border: #292E39;
+  --dialog-bg: #2f3441;
+  --dialog-confirm-btn: rgb(237, 67, 55);
+  --confirm-color: #fff;
+  --cancel-border:#B9BABE;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1395,6 +1399,9 @@ html {
   --cart-info-shadow: rgba(237, 237, 246, 0.20);
   --cart-info-color: #1A162E;
   --text-input-border: #D2D1D6;
+  --dialog-bg: #fff;
+  --dialog-confirm-btn:#FFB700;
+  --cancel-border:#fff;
 }
 @media (max-width: 767.98px) {
   html {
@@ -2542,8 +2549,11 @@ html {
 .btn .btn + .btn {
   margin-left: 20px;
 }
+.btn--small {
+  padding: 0 16px;
+  height: 40px;
+}
 .btn--text {
-  color: #9E9DA8;
   background-color: transparent;
   font-weight: 400;
 }
@@ -3692,6 +3702,63 @@ html {
 
 .continue-checkout-btn {
   margin-top: 30px;
+}
+
+.dialog__overlay, .dialog {
+  position: fixed;
+  inset: 0;
+}
+
+.dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility, opacity 0.5s ease;
+}
+.dialog__overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.dialog__content {
+  max-width: min(450px, 100% - 40px);
+  position: relative;
+  background-color: var(--dialog-bg);
+  z-index: 100;
+  border-radius: 20px;
+  box-shadow: 0px 20px 60px 10px var(--cart-info-shadow);
+  padding: 30px;
+}
+.dialog__text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.dialog__bottom {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  column-gap: 30px;
+}
+.dialog__confirm-btn {
+  background-color: var(--dialog-confirm-btn);
+  color: var(--confirm-btn-color);
+}
+.dialog__cancel-btn {
+  border: 1px solid var(--cancel-border);
+}
+@media (max-width: 767.98px) {
+  .dialog__content {
+    padding: 20px;
+  }
+  .dialog__bottom {
+    gap: 20px;
+  }
+  .dialog__btn {
+    flex: 1;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

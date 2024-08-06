@@ -113,7 +113,7 @@
                                                         class="liked-btn liked-btn-checkout">
                                                     Save
                                                 </button>
-                                                <button class="cart-item__ctrl-btn">
+                                                <button class="cart-item__ctrl-btn delete-btn">
                                                     <img src="./assets/icons/delete.svg" alt="delete">
                                                     Delete
                                                 </button>
@@ -166,7 +166,7 @@
                                                         class="liked-btn liked-btn-checkout">
                                                     Save
                                                 </button>
-                                                <button class="cart-item__ctrl-btn">
+                                                <button class="cart-item__ctrl-btn delete-btn">
                                                     <img src="./assets/icons/delete.svg" alt="delete">
                                                     Delete
                                                 </button>
@@ -219,7 +219,7 @@
                                                         class="liked-btn liked-btn-checkout">
                                                     Save
                                                 </button>
-                                                <button class="cart-item__ctrl-btn">
+                                                <button class="cart-item__ctrl-btn delete-btn">
                                                     <img src="./assets/icons/delete.svg" alt="delete">
                                                     Delete
                                                 </button>
@@ -311,12 +311,12 @@
         window.dispatchEvent(new Event('template-loaded'));
     </script>
     <!-- Dialog / Modal -->
-     <div class="dialog">
+     <div class="dialog hide">
         <div class="dialog__content">
-            <div class="dialog__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, veritatis?</div>
+            <div class="dialog__text">Do you want to remove this item from shopping cart?</div>
             <div class="dialog__bottom">
-                <button class="btn btn--text dialog__btn">Cancel</button>
-                <button class="btn btn--primar dialog__btn">Confirm</button>
+                <button class="btn btn--text btn--small dialog__btn dialog__cancel-btn">Cancel</button>
+                <button class="btn btn--primary btn--small dialog__btn dialog__confirm-btn">Confirm</button>
             </div>
         </div>
         <div class="dialog__overlay"></div>

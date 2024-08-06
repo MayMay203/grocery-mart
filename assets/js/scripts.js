@@ -297,4 +297,27 @@ window.addEventListener('template-loaded', () => {
             btn.classList.add('click-bound');
         }
     });
+
+    const deleteBtns = $$('.delete-btn');
+    const dialog = $('.dialog');
+    const cancelBtns = $$('.dialog__cancel-btn');
+    const dialogContent = $('.dialog__content');
+    const overlay = $('.dialog__overlay');
+    deleteBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            dialog.style.cssText = 'opacity: 1; visibility: visible;'
+        })
+    })
+
+    cancelBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            dialog.style.cssText = 'opacity: 0; visibility: hidden;'
+        })
+    })
+
+    overlay.addEventListener('click', (e) => {
+        if (!e.target.contains(dialogContent)) {
+            dialog.style.cssText = 'opacity: 0; visibility: hidden;'
+        }
+    })
 });

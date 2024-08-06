@@ -64,7 +64,11 @@ html{
     --cart-info-shadow: rgba(237, 237, 246, 0.20);
     --cart-info-color: #1A162E;
     --text-input-border: #D2D1D6;
-    
+    // Dialog
+    --dialog-bg: #fff;
+    --dialog-confirm-btn:#FFB700;
+    --cancel-border:#fff; 
+
 
     @include abstracts.screen(md){
        --auth-intro-bg: #FFF;

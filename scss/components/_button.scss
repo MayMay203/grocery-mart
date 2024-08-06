@@ -16,8 +16,12 @@
         margin-left: 20px;
     }
 
+    &--small{
+        padding: 0 16px;
+        height: 40px;
+    }
+
     &--text{
-        color: #9E9DA8;
         background-color: transparent;
         font-weight: 400;
     }
