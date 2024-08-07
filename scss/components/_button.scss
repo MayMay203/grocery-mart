@@ -32,6 +32,11 @@
         font-weight: 500;
     }
 
+    &--danger{
+        color: var(--danger-btn-color);
+        background-color: #ed4337;
+    }
+
     &--outline{
         background-color: transparent;
         border: 1px solid #D2D1D6;

@@ -70,6 +70,7 @@ html{
     --cancel-border:#fff; 
     // Shipping
     --checkbox-border: #1A162E;
+    --option-hover-bg: #ebebeb;
 
 
     @include abstracts.screen(md){

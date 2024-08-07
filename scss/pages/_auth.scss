@@ -142,19 +142,7 @@
     
     &__input-icon{
         width: 24px;
-    }
-
-    &__bottom{
-        margin-top: 108px;
-        @include abstracts.flexCenter('center', 'center');
-        column-gap: 10px;
-
-         @include abstracts.screen(md){
-                margin-top: 58px;
-        }
-    }
-
-    
+    }    
 }
 
 .checkbox-group{
