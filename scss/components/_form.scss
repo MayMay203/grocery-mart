@@ -23,7 +23,7 @@
 
     &-text__area,
     &-text__input{
-        padding: 12px;
+        padding: 0 12px;
         border-radius: 10px;
         border: 1px solid hsl(252, 6%, 83%);
         width: 100%;
@@ -56,7 +56,7 @@
     &-dialog__heading{
         font-weight: 600;
         font-size: 1.8rem;
-        padding: 14px;
+        padding: 20px;
         text-align: center;
     }
 
@@ -103,11 +103,11 @@
         flex-shrink: 0;
 
         @include abstracts.screen(lg){
-            height: 42px;
+            height: 48px;
         }
 
-         @include abstracts.screen(sm){
-           margin: 10px 20px 0;
+        @include abstracts.screen(sm){
+           margin: 10px 30px 0;
            border: 1px solid var(--text-input-border);
            border-radius: 10px;
            padding: 0 14px;
@@ -128,6 +128,10 @@
 
         &-icon{
             width: 16px;
+
+            @include abstracts.screen(lg){
+                width: 20px;
+            }
         }
     }
 
@@ -137,6 +141,11 @@
         overflow-y: auto;
         font-size: 1.4rem;
         overscroll-behavior: contain;
+
+        // IOS
+        @supports (-webkit-touch-callout: none){
+           padding-bottom: 300px;
+        }
     }
 
     &__close-dialog{
@@ -144,7 +153,7 @@
         position: absolute;
         right: 0;
         top: 0;
-        padding: 2px 18px;
+        padding: 10px 18px;
         opacity: 0.8;
     }
 
@@ -152,7 +161,8 @@
         padding: 8px 20px;
 
         @include abstracts.screen(lg){
-            padding: 14px 20px;
+            padding: 18px 30px;
+            font-size: 1.6rem;
         }
 
         &--active{
@@ -255,6 +265,12 @@
                 font-size: 1.4rem;
                 line-height: 1.42875;
                 margin-bottom: 10px;
+        }
+
+        &--medium{
+                color: var(--label-medium-color);
+                font-size: 1.8rem;
+                margin-bottom: 20px;
         }
     }
 

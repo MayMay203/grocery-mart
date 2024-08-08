@@ -71,6 +71,9 @@ html{
     // Shipping
     --checkbox-border: #1A162E;
     --option-hover-bg: #ebebeb;
+    --cart-info-content-bg: #F6F6F6;
+    // Payment
+    --label-medium-color: #1A162E;
 
 
     @include abstracts.screen(md){

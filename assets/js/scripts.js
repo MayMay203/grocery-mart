@@ -270,6 +270,35 @@ window.addEventListener('template-loaded', () => {
     })
 })
 
+window.addEventListener('template-loaded', () => {
+    const upBtns = document.querySelectorAll('.up-btn');
+    const downBtns = document.querySelectorAll('.down-btn');
+
+    upBtns.forEach(btn => {
+        if (!btn.classList.contains('click-bound')) {
+            btn.addEventListener('click', (e) => {
+                const inputValue = e.target.parentElement.querySelector('.cart-item__value');
+                let value = parseInt(inputValue.innerText, 10); 
+                value++; 
+                inputValue.innerText = value;
+            });
+            btn.classList.add('click-bound');
+        }
+    });
+
+    downBtns.forEach(btn => {
+        if (!btn.classList.contains('click-bound')) {
+            btn.addEventListener('click', (e) => {
+                const inputValue = e.target.parentElement.querySelector('.cart-item__value');
+                let value = parseInt(inputValue.innerText, 10); 
+                value--; 
+                inputValue.innerText = value; 
+            });
+            btn.classList.add('click-bound');
+        }
+    });
+});
+
 /**
  * JS toggle
  *

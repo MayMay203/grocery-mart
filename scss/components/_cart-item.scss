@@ -11,6 +11,23 @@
         padding: 20px;
     }
 
+    &__title{
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.4444;
+        margin-bottom: 13px;
+    }
+
+    &__top{
+        @include abstracts.flexCenter('center', 'space-between');
+        margin-bottom: 30px;
+        column-gap: 30px;
+
+        @include abstracts.screen(sm){
+            column-gap: 20px;
+        }
+    }
+
     &__heading{
         font-size: 2.4rem;
         font-weight: 700;
@@ -97,10 +114,6 @@
     &__sub-separate{
         margin-top: 0;
         margin-bottom: 14px;
-    }
-
-    &__heading{
-
     }
 }
 
@@ -257,5 +270,4 @@
                 opacity: 0.8;
             }
         }
-
 }

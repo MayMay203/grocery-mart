@@ -1,0 +1,27 @@
+.payment-page{
+    margin-bottom: 30px;
+
+    .payment-container{
+        margin-top: 30px;
+    }
+}
+
+.payment{
+    &__heading{
+        font-size: 2.2rem!important;
+    }
+
+    &__desc{
+        margin-top: 6px;
+    }
+
+    &__total{
+        margin-top: 30px;
+    }
+
+    &__btn{
+        margin-top: 30px;
+        border-radius: 10px!important;
+        height: 60px!important;
+    }
+}

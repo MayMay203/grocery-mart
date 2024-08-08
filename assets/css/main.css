@@ -1350,6 +1350,8 @@ html.dark {
   --cancel-border:#B9BABE;
   --checkbox-border: #B9BABE;
   --option-hover-bg: #a09c9c;
+  --cart-info-content-bg: #292E39;
+  --label-medium-color: #B9BABE;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1416,6 +1418,8 @@ html {
   --cancel-border:#fff;
   --checkbox-border: #1A162E;
   --option-hover-bg: #ebebeb;
+  --cart-info-content-bg: #F6F6F6;
+  --label-medium-color: #1A162E;
 }
 @media (max-width: 767.98px) {
   html {
@@ -1436,6 +1440,8 @@ html {
 }
 
 .header {
+  position: relative;
+  z-index: 2;
   background-color: var(--header-bg-color);
 }
 @media (max-width: 991.98px) {
@@ -2516,6 +2522,25 @@ html {
     row-gap: 16px;
   }
 }
+.address__card-link {
+  text-decoration: underline;
+  color: #0071dc;
+}
+.address__card-thumb {
+  width: 70px;
+  height: 54px;
+  object-fit: cover;
+  background-color: transparent;
+}
+.address__card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--cart-info-content-bg);
+  padding: 20px;
+  border-radius: 20px;
+}
 .address__card-left {
   display: flex;
   column-gap: 16px;
@@ -2563,6 +2588,13 @@ html {
 .address__card-choose {
   width: 23px;
   position: relative;
+  height: 100%;
+}
+.address__card-choose-shipping {
+  height: 27px;
+}
+.address__card-choose-payment {
+  height: 42px;
 }
 .address__card-right {
   align-self: flex-end;
@@ -2600,6 +2632,40 @@ html {
 .continue-btn {
   max-width: 184px;
   margin-left: auto;
+}
+
+.address__choose-label {
+  position: absolute;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.4444;
+  right: 32px;
+}
+
+.address__choose-price {
+  color: #9E9DA8;
+}
+
+.payment-page {
+  margin-bottom: 30px;
+}
+.payment-page .payment-container {
+  margin-top: 30px;
+}
+
+.payment__heading {
+  font-size: 2.2rem !important;
+}
+.payment__desc {
+  margin-top: 6px;
+}
+.payment__total {
+  margin-top: 30px;
+}
+.payment__btn {
+  margin-top: 30px;
+  border-radius: 10px !important;
+  height: 60px !important;
 }
 
 .logo {
@@ -3363,7 +3429,7 @@ html {
   justify-content: space-between;
 }
 .form-text__area, .form-text__input {
-  padding: 12px;
+  padding: 0 12px;
   border-radius: 10px;
   border: 1px solid hsl(252, 6%, 83%);
   width: 100%;
@@ -3394,7 +3460,7 @@ html {
 .form-dialog__heading {
   font-weight: 600;
   font-size: 1.8rem;
-  padding: 14px;
+  padding: 20px;
   text-align: center;
 }
 .form__select-dialog {
@@ -3440,12 +3506,12 @@ html {
 }
 @media (max-width: 991.98px) {
   .form__search {
-    height: 42px;
+    height: 48px;
   }
 }
 @media (max-width: 575.98px) {
   .form__search {
-    margin: 10px 20px 0;
+    margin: 10px 30px 0;
     border: 1px solid var(--text-input-border);
     border-radius: 10px;
     padding: 0 14px;
@@ -3465,6 +3531,11 @@ html {
 .form__search-icon {
   width: 16px;
 }
+@media (max-width: 991.98px) {
+  .form__search-icon {
+    width: 20px;
+  }
+}
 .form__options-list {
   margin-top: 8px;
   flex: 1;
@@ -3472,12 +3543,17 @@ html {
   font-size: 1.4rem;
   overscroll-behavior: contain;
 }
+@supports (-webkit-touch-callout: none) {
+  .form__options-list {
+    padding-bottom: 300px;
+  }
+}
 .form__close-dialog {
   font-size: 3rem;
   position: absolute;
   right: 0;
   top: 0;
-  padding: 2px 18px;
+  padding: 10px 18px;
   opacity: 0.8;
 }
 .form__option {
@@ -3485,7 +3561,8 @@ html {
 }
 @media (max-width: 991.98px) {
   .form__option {
-    padding: 14px 20px;
+    padding: 18px 30px;
+    font-size: 1.6rem;
   }
 }
 .form__option--active {
@@ -3575,6 +3652,11 @@ html {
   font-size: 1.4rem;
   line-height: 1.42875;
   margin-bottom: 10px;
+}
+.form__label--medium {
+  color: var(--label-medium-color);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
 }
 .form__select-wrap {
   margin-top: 20px;
@@ -3788,6 +3870,24 @@ html {
     padding: 20px;
   }
 }
+.cart-info__title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.4444;
+  margin-bottom: 13px;
+}
+.cart-info__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  column-gap: 30px;
+}
+@media (max-width: 575.98px) {
+  .cart-info__top {
+    column-gap: 20px;
+  }
+}
 .cart-info__heading {
   font-size: 2.4rem;
   font-weight: 700;
@@ -3869,6 +3969,7 @@ html {
   margin-top: 0;
   margin-bottom: 14px;
 }
+
 .cart-item {
   display: flex;
   align-items: center;
