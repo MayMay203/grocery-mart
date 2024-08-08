@@ -86,6 +86,11 @@
     &-content{
         margin-top: 30px;
 
+        &__top{
+            @include abstracts.flexCenter('center', null);
+            column-gap: 10px;
+        }
+
         &:first-child{
             margin-top: 0;
         }

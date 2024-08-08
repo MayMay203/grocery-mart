@@ -12,6 +12,12 @@
         }
     }
 
+    &__card-bottom{
+        @include abstracts.flexCenter('center', 'flex-end');
+        column-gap: 20px;
+        margin-top: 30px;
+    }
+
     &:has(:invalid) &__submit-btn{
         opacity: 0.5;
         pointer-events: none;

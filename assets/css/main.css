@@ -2838,6 +2838,11 @@ html {
 .profile-content {
   margin-top: 30px;
 }
+.profile-content__top {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
 .profile-content:first-child {
   margin-top: 0;
 }
@@ -3650,6 +3655,13 @@ html {
   .form__bottom {
     margin-top: 58px;
   }
+}
+.form__card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 20px;
+  margin-top: 30px;
 }
 .form:has(:invalid) .form__submit-btn {
   opacity: 0.5;
