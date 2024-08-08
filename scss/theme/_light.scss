@@ -3,6 +3,7 @@ html{
     // Home page
     --text-color: #1A162E;
     --icon-color: brightness(0) saturate(100%) invert(8%) sepia(34%) saturate(1080%) hue-rotate(210deg) brightness(91%) contrast(97%);
+    --icon-light-color: brightness(0) saturate(100%) invert(8%) sepia(9%) saturate(5501%) hue-rotate(215deg) brightness(95%) contrast(95%);
 
     --body-bg: #F6F6F6;
     --header-bg-color: #eee;
@@ -74,6 +75,12 @@ html{
     --cart-info-content-bg: #F6F6F6;
     // Payment
     --label-medium-color: #1A162E;
+    // Profile
+    --profile-sidebar-bg: #fff;
+    --profile-sidebar-shadow: rgba(237, 237, 246, 0.20);
+    --profile-page-text-color: #1A162E;
+    --account-info-bg: #F6F6F6;
+    --profile-menu-link-hover-color: #f3f2f2;
 
 
     @include abstracts.screen(md){

@@ -172,7 +172,16 @@
     &__thumb{
         width: 172px;
         height: 172px;
-        object-fit: cover;
+        object-fit: contain;
+
+        &--small{
+            width: 151px;
+            height: 108px;
+
+            @include abstracts.screen(lg){
+                width: 80px;
+            }
+        }
 
         @include abstracts.screen(md){
             width: 150px;
@@ -190,6 +199,11 @@
         font-weight: 500;
         line-height: 1.4444;
         margin-bottom: 16px;
+
+        &--small{
+            font-size: 1.5rem;
+            line-height: 1.46667;
+        }
     }
 
     &__status,
@@ -218,6 +232,22 @@
             @include abstracts.screen(xl){
                 flex-direction: column;
             }
+        }
+
+        &-intro{
+            flex-direction: column;
+        }
+    }
+
+    &__bottom{
+        @include abstracts.flexCenter('center', null);
+        column-gap: 20px;
+
+        @include abstracts.screen(sm){
+            flex-direction: column;
+            row-gap: 10px;
+            align-items: initial;
+            width: 140px;
         }
     }
 
@@ -284,11 +314,16 @@
             font-weight: 700;
             line-height: 1.45455;
 
+            &--no-margin{
+                margin: 0!important;
+            }
+
             &--left{
                 @include abstracts.screen(xl){
                 text-align: left;
                 margin: 16px 0;
-            }
+                }
+
             }
 
             @include abstracts.screen(lg){

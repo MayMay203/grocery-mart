@@ -88,12 +88,13 @@ html.dark{
     --cart-info-content-bg: #292E39;
     // Payment
     --label-medium-color: #B9BABE;
+    // Profile sidebar
+    --profile-sidebar-bg: #171C28;
+    --profile-sidebar-shadow: rgba(23, 28, 40, 0.20);
+    --profile-page-text-color: #B9BABE;
+    --account-info-bg: #292E39;
+    --profile-menu-link-hover-color: #292E39;
 
-
-
-
-
-    
     @include abstracts.screen(lg){
       --header-shadow: rgba(0, 0, 0, 0.20);
       --sidebar-bg-color: #292E39;

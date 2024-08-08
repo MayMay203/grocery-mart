@@ -1,0 +1,74 @@
+@use '../abstracts';
+.payment-card{
+   background-color: var(--payment-card-bg);
+   color: #fff;
+   padding: 20px;
+   position: relative;
+
+   &__top{
+        @include abstracts.flexCenter('center', null);
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.42857;
+   }
+
+   &__number{   
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.4444;
+        margin-top: 37px;
+   }
+
+   &__bottom{
+        margin-top: 20px;
+        @include abstracts.flexCenter('center', null);
+        column-gap: 40px;
+   }
+
+   &__label{
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.75;
+   }
+
+   &__value{
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+   }
+
+   &__decor{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 137px;
+        height: 137px;
+   }
+
+   &__circle{
+    position: relative;
+    &::after,
+    &::before{
+        content: "";
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+
+    }
+
+    &::before{
+        z-index: 1;
+        background-color: #F94545;
+        right: 14px;
+        bottom: 0;
+        mix-blend-mode: hard-light;
+    }
+
+    &::after{
+        background-color: #FFB700;
+        right: 0;
+        bottom: 0;
+    }
+   }
+}
