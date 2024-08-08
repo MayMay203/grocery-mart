@@ -63,7 +63,11 @@
         width: 70px;
         height: 54px;
         object-fit: cover;
-        background-color: transparent
+        
+        @include abstracts.screen(sm){
+            width: 60px;
+            height: 46px;
+        }
     }
 
     &-content{
@@ -143,7 +147,7 @@
     &-right{
         align-self: flex-end;
 
-          @include abstracts.screen(md){
+        @include abstracts.screen(md){
             align-self: initial;
         }
     }
@@ -186,6 +190,11 @@
     font-weight: 500;
     line-height: 1.4444;
     right: 32px;
+
+    @include abstracts.screen(md){
+        left: calc(100% + 14px);
+        margin-top: 2px;
+    }
 }
 
 .address__choose-price{

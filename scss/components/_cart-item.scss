@@ -115,6 +115,17 @@
         margin-top: 0;
         margin-bottom: 14px;
     }
+
+    &__bottom-ctrl{
+        margin-top: 30px;
+        @include abstracts.flexCenter('center', 'space-between');
+
+        @include abstracts.screen(sm){
+            flex-direction: column;
+            row-gap: 16px;
+            align-items: initial;
+        }
+    }
 }
 
 .cart-item{
@@ -126,6 +137,36 @@
 
     @include abstracts.screen(sm){
         padding: 16px 0;
+    }
+
+    &--not-center{
+        align-items: initial;
+
+        @include abstracts.screen(sm){
+            column-gap: 0;
+        }
+    }
+
+    &__btns, &__inputs{
+        display: flex;
+        column-gap: 30px;
+    }
+
+    &__btns{
+        @include abstracts.screen(sm){
+            column-gap: 10px;
+        }
+    }
+
+    &__inputs{
+        @include abstracts.screen(sm){
+            flex-direction: column;
+            row-gap: 16px;
+        }
+    }
+
+    &__thumbs{
+        @include abstracts.flexCenter(null, null);
     }
 
     &__thumb{
@@ -170,6 +211,14 @@
         @include abstracts.screen(lg){
             flex-direction: column;
         }
+
+        &--fill{
+            flex: 1;
+
+            @include abstracts.screen(xl){
+                flex-direction: column;
+            }
+        }
     }
 
     &__input{
@@ -189,7 +238,7 @@
 
     &__ctrl{
         display: flex;
-        column-gap: 20px;
+        column-gap: 30px;
 
         @include abstracts.screen(md){
             row-gap: 10px;
@@ -234,6 +283,13 @@
             font-size: 2.2rem;
             font-weight: 700;
             line-height: 1.45455;
+
+            &--left{
+                @include abstracts.screen(xl){
+                text-align: left;
+                margin: 16px 0;
+            }
+            }
 
             @include abstracts.screen(lg){
                 text-align: left;

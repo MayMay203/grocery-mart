@@ -1,3 +1,5 @@
+@use '../abstracts';
+
 .payment-page{
     margin-bottom: 30px;
 
@@ -9,6 +11,27 @@
 .payment{
     &__heading{
         font-size: 2.2rem!important;
+
+        @include abstracts.screen(md){
+            font-size: 1.8rem!important;
+        }
+    }
+
+    &__card-right{
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        @include abstracts.screen(sm){
+            flex-direction: column;
+            align-items: initial;
+            row-gap: 16px;
+        }
+    }
+
+    &__card-info{
+        position: relative;
+        margin-right: auto;
     }
 
     &__desc{
@@ -23,5 +46,16 @@
         margin-top: 30px;
         border-radius: 10px!important;
         height: 60px!important;
+    }
+}
+
+.address__card-payment{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+
+    @include abstracts.screen(sm){
+        align-items: initial;
     }
 }
