@@ -217,14 +217,12 @@ window.addEventListener('template-loaded', () => {
     if (dotElement) {
         dotElement.addEventListener('click', (e) => {
         contentPart.style.transform = 'translateX(0)';
-        console.log(contentPart)
     })
     }
 
     if (next) {
         next.addEventListener('click', (e) => {
         contentPart.style.transform = 'translateX(0)';
-        console.log(contentPart)
     })
     }
 })
@@ -257,14 +255,12 @@ window.addEventListener('template-loaded', () => {
     productTabs.forEach(tab => {
         tab.addEventListener('click', (e) => {
             const index = e.target.dataset.index;
-            console.log(index);
             productTabs.forEach(tab => {
                 tab.classList.remove('product-tab__item--active');
             })
             e.target.classList.add('product-tab__item--active');
             productContents.forEach(content => {
                 content.style.transform = `translateX(${-index * 100}%)`;
-                console.log(content)
             })
         })
     })
@@ -311,7 +307,6 @@ window.addEventListener("template-loaded", initJsToggle);
 function initJsToggle() {
     $$(".js-toggle").forEach((button) => {
         const target = button.getAttribute("toggle-target");
-        console.log(target);
         if (!target) {
             document.body.innerText = `Cần thêm toggle-target cho: ${button.outerHTML}`;
         }
@@ -338,3 +333,33 @@ function initJsToggle() {
         };
     });
 }
+
+window.addEventListener("template-loaded", () => {
+    const switchBtn = document.querySelector("#switch-theme-btn");
+    if (switchBtn) {
+        switchBtn.onclick = function () {
+            const isDark = localStorage.dark === "true";
+            document.querySelector("html").classList.toggle("dark", !isDark);
+            localStorage.setItem("dark", !isDark);
+            switchBtn.querySelector("span").textContent = isDark ? "Dark mode" : "Light mode";
+            if (!isDark) {
+                switchBtn.querySelector('img').src = './assets/icons/sun-light.svg';
+            }
+            else {
+                switchBtn.querySelector('img').src = "./assets/icons/sun-dark.svg";
+            }
+        };
+    }
+
+    switchBtn.querySelector("span").textContent = !isDark ? "Dark mode" : "Light mode";
+    if (isDark) {
+        switchBtn.querySelector('img').src = './assets/icons/sun-light.svg';
+    }
+    else {
+        switchBtn.querySelector('img').src = "./assets/icons/sun-dark.svg";
+    }
+});
+
+const isDark = localStorage.dark === "true";
+document.querySelector("html").classList.toggle("dark", isDark);
+
