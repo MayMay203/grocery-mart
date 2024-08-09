@@ -65,7 +65,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Gordita";
+  font-family: "Lato";
   color: var(--text-color);
   background-color: var(--body-bg);
 }
@@ -1290,7 +1290,7 @@ html.dark {
   --body-bg: #292E39;
   --header-bg-color: #171C28;
   --top-act-group-bg-color: #292E39;
-  --top-act-separate-bg-color: #EDEDF6;
+  --top-act-separate-bg-color: #B9BABE;
   --top-act-group-shadow: rgba(0, 0, 0, 0.20);
   --dropdown-bg-color: #2f3441;
   --dropdown-arrow-bg-color: brightness(0) saturate(100%) invert(17%) sepia(7%) saturate(1780%) hue-rotate(186deg) brightness(103%) contrast(91%);
@@ -1498,7 +1498,6 @@ html {
 .navbar {
   margin-left: 129px;
   margin-right: auto;
-  padding: 10px 0;
   transition: transform 0.5s ease;
 }
 @media (max-width: 1199.98px) {
@@ -1516,6 +1515,7 @@ html {
     transform: translateX(-100%);
     border-radius: 0px 20px 0px 0px;
     color: var(--sidebar-text-color);
+    padding: 10px 0;
   }
 }
 @media (max-width: 575.98px) {
@@ -3204,7 +3204,7 @@ html {
 .slideshow-item {
   position: relative;
   width: 100%;
-  padding-top: 34%;
+  padding-top: 26%;
   flex-shrink: 0;
 }
 @media (max-width: 767.98px) {
@@ -3302,8 +3302,8 @@ html {
   scale: 1.1;
 }
 .cate-item__thumb {
-  width: 116px;
-  height: 116px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   background-color: var(--cate-item-img-bg);
   border-radius: 8px;
@@ -4553,6 +4553,7 @@ html {
   opacity: 1;
 }
 .modal__body {
+  padding-bottom: 20px;
   padding-right: 20px;
   max-height: calc(100vh - 180px);
   overflow: auto;
