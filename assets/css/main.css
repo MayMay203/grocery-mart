@@ -3752,6 +3752,7 @@ html {
   position: relative;
   display: flex;
   align-items: center;
+  height: 48px;
 }
 @media (max-width: 767.98px) {
   .form-text__input {

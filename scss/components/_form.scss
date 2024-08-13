@@ -50,6 +50,8 @@
     &-text__input{
         position: relative;
         @include abstracts.flexCenter('center', null);
+        height: 48px;
+        
         @include abstracts.screen(md){
                height: 48px;
         }
